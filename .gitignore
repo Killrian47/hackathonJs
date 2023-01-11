@@ -20,21 +20,15 @@ node_modules
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-<<<<<<< HEAD
-###> Other ###
-yarn.lock
-composer.lock
-package-lock.json
-###< Other ###
-=======
-###> IDE ###
-.idea
-.vscode
-###< IDE ###
 ###> symfony/webpack-encore-bundle ###
 /node_modules/
 /public/build/
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
->>>>>>> 14f15b6f434cca0f21a6d7a945366e74d3a06c12
+
+###> IDE ###
+.idea
+DS_Store
+###< IDE ###
+
