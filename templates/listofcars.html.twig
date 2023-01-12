@@ -31,464 +31,117 @@
                             <h5>Filter by</h5>
                             <div class="filter-single">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Location <span class="caret"></span>
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        Agency
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="brand-one">
-                          <label for="brand-one">Bordeaux</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="brand-two">
-                          <label for="brand-two">Paris</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="brand-three">
-                          <label for="brand-three">Lyon</label>
-                        </span>
-                                        </li>
+                                        {% for company in companies %}
+                                            <a href="{{ path('app_listofcars', {type: 'company', sort: company.id}) }}">{{ company.name }}</a><br>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
                             <div class="filter-single">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Brand <span class="caret"></span>
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        Brand
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="brand-one">
-                          <label for="brand-one">Ford Shelby</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="brand-two">
-                          <label for="brand-two">BMW M6 Gran</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="brand-three">
-                          <label for="brand-three">AUDI R8 2011</label>
-                        </span>
-                                        </li>
+                                        {% for vehicle in vehicles %}
+                                            <a href="{{ path('app_listofcars', {type: 'vehicleBrand', sort: vehicle.vehicleBrand}) }}">{{ vehicle.vehicleBrand }}</a><br>
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
                             <div class="filter-single">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Class <span class="caret"></span>
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        Class
                                     </button>
                                     <ul class="dropdown-menu">
-
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="class-a">
-                          <label for="class-a">A class</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="class-b">
-                          <label for="class-b">B class</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="class-c">
-                          <label for="class-c">C class</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="class-d">
-                          <label for="class-d">D class</label>
-                        </span>
-                                        </li>
+                                        <a href="{{ path('app_listofcars', {type: 'vehicleType', sort: 'sedan'}) }}">sedan</a><br>
+                                        <a href="{{ path('app_listofcars', {type: 'vehicleType', sort: 'small'}) }}">small</a><br>
+                                        <a href="{{ path('app_listofcars', {type: 'vehicleType', sort: 'MPV'}) }}">MPV</a><br>
+                                        <a href="{{ path('app_listofcars', {type: 'vehicleType', sort: 'coupe'}) }}">coupe</a>
                                     </ul>
                                 </div>
                             </div>
                             <div class="filter-single">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Fuel <span class="caret"></span>
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                            aria-haspopup="true" aria-expanded="false">
+                                        Fuel
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="fule-one">
-                          <label for="fule-one">50 liter</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="fuel-two">
-                          <label for="fuel-two">100 liter</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="fuel-three">
-                          <label for="fuel-three">120 liter</label>
-                        </span>
-                                        </li>
-                                        <li>
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="fuel-four">
-                          <label for="fuel-four">130 liter</label>
-                        </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="filter-single">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Price <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <div class="rq-pricing-slider">
-                                                <div id="slider-range"></div>
-                                                <p>
-                                                    <label for="amount">range:</label>
-                                                    <input type="text" id="amount">
-                                                </p>
-                                            </div>
-                                        </li>
+                                        <a href="{{ path('app_listofcars', {type: 'vehicleFuelType', sort: 'electric'}) }}">Electric</a><br>
+                                        <a href="{{ path('app_listofcars', {type: 'vehicleFuelType', sort: 'hybrid'}) }}">Hybrid</a><br>
+                                        <a href="{{ path('app_listofcars', {type: 'vehicleFuelType', sort: 'gas'}) }}">Gas</a><br>
+                                        <a href="{{ path('app_listofcars', {type: 'vehicleFuelType', sort: 'diesel'}) }}">Diesel</a>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="rq-grid-list-view-option">
-                            <a  href="{{ path('app_carListGrid') }}" data-class="rq-listing-grid"><i class="ion-grid"></i></a>
-                            <a class="active" href="{{ path('app_carListList') }}" data-class="rq-listing-list"><i class="ion-navicon"></i></a>
+                            <a href="{{ path('app_carListGrid') }}" data-class="rq-listing-grid"><i
+                                        class="ion-grid"></i></a>
+                            <a class="active" href="{{ path('app_carListList') }}" data-class="rq-listing-list"><i
+                                        class="ion-navicon"></i></a>
                         </div>
                     </div>
 
                     <div class="rq-car-listing-wrapper">
                         <div class="rq-listing-choose rq-listing-list">
                             <div class="row">
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car1.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">BMW</h5>
-                                            <h3 class="car-name"><a href="#">BMW M6 Gran Coupé</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$39</span> / day
-                          </span>
+                                {% for vehicle in vehicles %}
+                                    <div class="col-md-4 col-sm-6">
+                                        <div class="listing-single">
+                                            <div class="listing-img">
+                                                <img src="img/car-listing-grid/car1.jpg" alt="">
                                             </div>
+                                            <div class="listing-details">
+                                                <h3 class="car-name"><a
+                                                            href="#">{{ vehicle.vehicleBrand }} {{ vehicle.vehicleModel }}</a>
+                                                </h3>
+                                                <ul class="rating-list">
+                                                    <li><i class="ion-star"></i></li>
+                                                    <li><i class="ion-star"></i></li>
+                                                    <li><i class="ion-star"></i></li>
+                                                    <li><i class="ion-star"></i></li>
+                                                    <li><i class="ion-star"></i></li>
+                                                </ul>
+                                                <ul>
+                                                    <li>Class: <span>{{ vehicle.vehicleType }}</span></li>
+                                                    <li>seats Count: <span>{{ vehicle.vehicleSeatCount }}</span></li>
+                                                    <li>Fuel Type: <span>{{ vehicle.vehicleFuelType }}</span></li>
+                                                    <li>Transmission: <span>{{ vehicle.vehicleGearBoxType }}</span></li>
+                                                    <li>door count: <span>{{ vehicle.vehicleDoorCount }}</span></li>
+                                                    <li>Agency: <span>{{ vehicle.company.name }}</span></li>
+                                                </ul>
+                                                <div class="listing-footer">
+                                                    <span><a href="#">Details</a></span>
+                                                    <span>
+                            Starting at <span class="price">{{ vehicle.price }}</span> / day
+                          </span>
+                                                </div>
 
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car2.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">FORD</h5>
-                                            <h3 class="car-name"><a href="#">Ford Shelby GT500</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$19</span> / day
-                          </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car3.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">AUDI</h5>
-                                            <h3 class="car-name"><a href="#">AUDI R8 2011</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$42</span> / day
-                          </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car4.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">Mercedes</h5>
-                                            <h3 class="car-name"><a href="#">Mercedes-Benz-C-Class</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$66</span> / day
-                          </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car5.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">AUDI</h5>
-                                            <h3 class="car-name"><a href="#">AUDI RS7 2015</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$18</span> / day
-                          </span>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car6.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">BMW</h5>
-                                            <h3 class="car-name"><a href="#">Sport Car</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$25</span> / day
-                          </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car7.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">NISSAN</h5>
-                                            <h3 class="car-name"><a href="#">Nissan 370Z</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$29</span> / day
-                          </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car8.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">AUDI</h5>
-                                            <h3 class="car-name"><a href="#">AUDI R8 2016</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$32</span> / day
-                          </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 col-sm-6">
-                                    <div class="listing-single">
-                                        <div class="listing-img">
-                                            <img src="img/car-listing-grid/car9.jpg" alt="">
-                                        </div>
-                                        <div class="listing-details">
-                                            <h5 class="car-brand">BMW</h5>
-                                            <h3 class="car-name"><a href="#">BMW i8</a></h3>
-                                            <ul class="rating-list">
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                                <li><i class="ion-star"></i></li>
-                                            </ul>
-                                            <ul>
-                                                <li>Class: <span>Premium</span></li>
-                                                <li>Air Condition: <span>Yes</span></li>
-                                                <li>Body Style: <span>Sedan</span></li>
-                                                <li>Transmission: <span>Automatic</span></li>
-                                            </ul>
-                                            <div class="listing-footer">
-                                                <span><a href="#">Details</a></span>
-                                                <span>
-                            Starting at <span class="price">$40</span> / day
-                          </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
-                        <div class="rq-pagination">
-                            <nav>
-                                <ul class="rq-pagination-list">
-                                    <li class="pagin-text">
-                                        <a href="#" aria-label="Previous">
-                                            <span aria-hidden="true"><i class="arrow_left"></i> Prev</span>
-                                        </a>
-                                    </li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a class="center-dot" href="#">...</a></li>
-                                    <li><a href="#">12</a></li>
-                                    <li class="pagin-text">
-                                        <a href="#" aria-label="Next">
-                                            <span aria-hidden="true">next <i class="arrow_right"></i></span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
+
                     </div>
+                </div>  <!-- /.rq-content-block -->
+            </div>
 
-                </div>
-            </div>  <!-- /.rq-content-block -->
-        </div>
-
-    </div> <!-- end #main-wrapper -->
-
+        </div> <!-- end #main-wrapper -->
+    </div>
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/moment.min.js') }}"></script>
-    <script src="{{ asset('js/scripts.js') }}" ></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
 
 {% endblock %}
