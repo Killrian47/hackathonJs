@@ -1,0 +1,53 @@
+<div class="d-flex justify-content-center gap-4 mt-2 bg-warning-subtle p-2 m-2">
+    <div class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Brand
+        </button>
+        <ul class="dropdown-menu">
+            {% for vehicle in vehicles %}
+                <li><a class="dropdown-item" href="#" value="{{ vehicle.vehicleBrand }}">{{ vehicle.vehicleBrand }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Model
+        </button>
+        <ul class="dropdown-menu">
+            {% for vehicle in vehicles %}
+                <li><a class="dropdown-item" href="#" value="{{ vehicle.vehicleModel }}">{{ vehicle.vehicleModel }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Class
+        </button>
+        <ul class="dropdown-menu">
+            {% for vehicle in vehicles %}
+                <li><a class="dropdown-item" href="#" value="{{ vehicle.vehicleType }}">{{ vehicle.vehicleType }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Number of seats
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" value="2">2</a></li>
+            <li><a class="dropdown-item" href="#" value="2">4</a></li>
+            <li><a class="dropdown-item" href="#" value="2">5</a></li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Fuel
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ path }}" value="2">Diesel</a></li>
+            <li><a class="dropdown-item" href="#" value="2">Gas</a></li>
+            <li><a class="dropdown-item" href="#" value="2">Electric</a></li>
+            <li><a class="dropdown-item" href="#" value="2">Hybrid</a></li>
+        </ul>
+    </div>
+</div>

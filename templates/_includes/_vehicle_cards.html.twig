@@ -1,0 +1,13 @@
+<div class="container-fluid p-5 py-3 home-main-container">
+    <div class="row">
+        {% for vehicle in vehicles %}
+            <div class="card">
+                <div class="card-body m-2">
+                    <h5 class="card-title">{{ vehicle.vehicleModel }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
