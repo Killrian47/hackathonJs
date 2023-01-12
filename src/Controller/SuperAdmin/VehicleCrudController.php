@@ -4,6 +4,8 @@ namespace App\Controller\SuperAdmin;
 
 use App\Entity\Vehicle;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class VehicleCrudController extends AbstractCrudController
 {
@@ -12,14 +14,18 @@ class VehicleCrudController extends AbstractCrudController
         return Vehicle::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
+            TextField::new('vehicleBrand'),
+            TextField::new('vehicleModel'),
+            TextField::new('vehicleType'),
+            TextField::new('vehicleGearBoxType'),
+            IntegerField::new('vehicleSeatCount'),
+            IntegerField::new('vehicleDoorCount'),
+            TextField::new('vehicleFuelType'),
         ];
     }
-    */
+
 }
