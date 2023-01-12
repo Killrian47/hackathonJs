@@ -27,9 +27,11 @@ class Company
     #[ORM\OneToMany(mappedBy: 'company', targetEntity: Vehicle::class)]
     private Collection $vehicles;
 
+
     public function __construct()
     {
         $this->vehicles = new ArrayCollection();
+        $this->users = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -102,4 +104,5 @@ class Company
 
         return $this;
     }
+
 }
