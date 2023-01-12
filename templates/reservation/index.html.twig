@@ -3,7 +3,13 @@
 {% block title %}Hello ReservationController!{% endblock %}
 
 {% block body %}
-    <table style ="border: 1px solid #cccccc; margin: auto; padding-bottom: 10em;">
+    <div style="text-align: center; font-weight: bold;">
+        <h2>My reservations</h2>
+    </div>
+
+    <div style="display: flex">
+    <div style="margin: auto; padding-bottom: 10em;">
+    <table style ="border: 1px solid #cccccc;">
         <tr style ="border: 1px solid #cccccc;">
             <th style ="border: 1px solid #cccccc; padding-right: 5em;">Reservation Number</th>
             <th style ="border: 1px solid #cccccc; padding-right: 10em;">Dates of renting</th>
@@ -23,10 +29,14 @@
         </tr>
         {% endif %}
         {% endfor %}
+        <div style="margin: auto;">
         <a href=" {{ path('app_points_added') }}">
-        <button style="margin-left: 10em; margin-top: 5em;" >Add points</button>
+        <button style="margin-left: 28em; margin-top: 4em; margin-bottom: 5em;" >Add points</button>
         </a>
+        </div>
 
     </table>
+    </div>
+    </div>
+
 {% endblock %}
-{#style="margin: auto;"#}
