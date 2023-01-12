@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ vehicle.vehicleBrand }} {{ vehicle.vehicleModel }}{% endblock %}
+
+{% block body %}
+    {{ vehicle.vehicleBrand }}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button type="submit">Reserver</button>
+    {{ form_end(form) }}
+{% endblock %}
+

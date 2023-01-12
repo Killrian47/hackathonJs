@@ -1,4 +1,18 @@
+{#{{ dump(companies) }}#}
+
 <div class="d-flex">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Agency
+        </button>
+        <ul class="dropdown-menu">
+            {% for company in companies %}
+                <li><a class="dropdown-item"
+                       href="{{ path('app_vehicles', {type: 'company', sort: company.id}) }}">{{ company.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Brand
@@ -43,7 +57,7 @@
             <li><a class="dropdown-item"
                    href="{{ path('app_vehicles', {type: 'vehicleGearBoxType', sort: 'Automatic'}) }}">Automatic</a></li>
             <li><a class="dropdown-item"
-                   href="{{ path('app_vehicles', {type: 'vehicleGearBoxType', sort: 'Manuel'}) }}">Manuel</a></li>
+                   href="{{ path('app_vehicles', {type: 'vehicleGearBoxType', sort: 'Manual'}) }}">Manual</a></li>
 
         </ul>
     </div>
