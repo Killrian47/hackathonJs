@@ -19,7 +19,7 @@ class VehicleFixtures extends Fixture implements DependentFixtureInterface
 
         for ($i = 0; $i < 10; $i++) {
             $vehicle = new Vehicle();
-            $vehicle->setVehicleBrand(FakeCar::vehicleType());
+            $vehicle->setVehicleBrand(FakeCar::vehicleBrand());
             $vehicle->setVehicleModel(FakeCar::vehicleModel());
             $vehicle->setVehicleType(FakeCar::vehicleType());
             $vehicle->setVehicleGearBoxType(FakeCar::vehicleGearBoxType());

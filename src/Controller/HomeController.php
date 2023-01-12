@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 
+use App\Form\SearchVehicleType;
+use App\Entity\Company;
+use App\Entity\Vehicle;
+use App\Repository\CompanyRepository;
 use App\Repository\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -14,26 +17,64 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(): Response
+    public function index(Request $request, VehicleRepository $vehicleRepository): Response
     {
+        $form = $this->createForm(SearchVehicleType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->getData()['search'];
+            $vehicles = $vehicleRepository->findVehicleByFuelType($search);
+
+            return $this->renderForm('listofcars.html.twig', [
+                'vehicles' => $vehicles,
+                'form' => $form
+            ]);
+        }
+
         return $this->render('home/index.html.twig', [
+
             'controller_name' => 'HomeController',
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/vehicles/{type}/{sort}', name: 'app_vehicles')]
+    public function showVehicles(Request $request, VehicleRepository $vehicleRepository, string $type = 'all', string|int $sort = 'unsorted'): Response
+    {
+        if ($type !== 'all' && $sort !== 'unsorted') {
+            return $this->render('home/index.html.twig', [
+                'vehicles' => $vehicleRepository->findBy([$type => $sort])
+            ]);
+        }
+        return $this->render('home/index.html.twig', [
+            'vehicles' => $vehicleRepository->findAll()
         ]);
     }
 
     #[Route('/carListingGrid', name: 'app_carListGrid')]
-    public function carListingGrid(): Response
+    public function carListingGrid(Request $request): Response
     {
+        $form = $this->createForm(SearchVehicleType::class);
+        $form->handleRequest($request);
+
         return $this->render('car-listing-grid.html.twig', [
             'controller_name' => 'HomeController',
+            'form' => $form,
+
         ]);
     }
 
     #[Route('/carListingList', name: 'app_carListList')]
-    public function carListingList(): Response
+    public function carListingList(Request $request): Response
     {
+        $form = $this->createForm(SearchVehicleType::class);
+        $form->handleRequest($request);
+
         return $this->render('car-listing-list.html.twig', [
             'controller_name' => 'HomeController',
+            'form' => $form,
+
         ]);
     }
 
@@ -67,8 +108,8 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/checkout', name: 'app_checkout')]
-    public function checkout(): Response
+    #[Route('/checkout/{id}', name: 'app_checkout')]
+    public function checkout(Vehicle $vehicle): Response
     {
         return $this->render('checkout.html.twig', [
             'controller_name' => 'HomeController',
@@ -84,18 +125,41 @@ class HomeController extends AbstractController
     }
 
     #[Route('/listofcars', name: 'app_listofcars')]
-    public function listofcars(): Response
+    public function listofcars(Request $request, VehicleRepository $vehicleRepository): Response
     {
+        $form = $this->createForm(SearchVehicleType::class);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->getData()['search'];
+            $vehicles = $vehicleRepository->findVehicleByFuelType($search);
+
+            return $this->renderForm('listofcars.html.twig', [
+                'vehicles' => $vehicles,
+                'form' => $form
+            ]);
+        }
+
+    #[Route('/listofcars/{type}/{sort}', name: 'app_listofcars')]
+    public function listOfCars(VehicleRepository $vehicleRepository, CompanyRepository $companyRepository, string $type = 'all', string $sort = 'unsorted'): Response
+    {
+        if ($type !== 'all' && $sort !== 'unsorted') {
+            return $this->render('listofcars.html.twig', [
+                'vehicles' => $vehicleRepository->findBy([$type => $sort]),
+                'companies' => $companyRepository->findAll(),
+            ]);
+        }
         return $this->render('listofcars.html.twig', [
-            'controller_name' => 'HomeController',
+            'vehicles' => $vehicleRepository->findAll(),
+            'companies' => $companyRepository->findAll()
         ]);
     }
 
-    #[Route('/cardetails', name: 'app_cardetails')]
-    public function cardetails(): Response
+    #[Route('/cardetails/{id}', name: 'app_cardetails')]
+    public function cardetails(Vehicle $vehicle): Response
     {
         return $this->render('car-details.html.twig', [
-            'controller_name' => 'HomeController',
+            'vehicle' => $vehicle,
         ]);
     }
 }
