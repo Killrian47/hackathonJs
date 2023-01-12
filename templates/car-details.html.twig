@@ -46,31 +46,32 @@
                                 <div class="col-md-12">
                                     <div class="rq-listing-promo-content">
                                         <div class="rq-listing-item">
-                                            <h6 class="rq-listing-item-title">Vehicle Model</h6>
-                                            <h4 class="rq-listing-item-number">Ford Focus</h4>
+                                            <h6 class="rq-listing-item-title">{{ vehicle.vehicleModel }}</h6>
+                                            <h4 class="rq-listing-item-number">{{ vehicle.vehicleBrand }}</h4>
                                         </div>
                                         <div class="rq-listing-item">
-                                            <h6 class="rq-listing-item-title">Vehicle Type</h6>
-                                            <h4 class="rq-listing-item-number">Hatchback</h4>
+                                            <h6 class="rq-listing-item-title">Class</h6>
+                                            <h4 class="rq-listing-item-number">{{ vehicle.vehicleType }}</h4>
                                         </div>
                                         <div class="rq-listing-item">
                                             <h6 class="rq-listing-item-title">Doors</h6>
-                                            <h4 class="rq-listing-item-number">5</h4>
+                                            <h4 class="rq-listing-item-number">{{ vehicle.vehicleDoorCount }}</h4>
                                         </div>
                                         <div class="rq-listing-item">
                                             <img src="img/listing-icon2.png" alt="">
                                             <h6 class="rq-listing-item-title">Transmission</h6>
-                                            <h4 class="rq-listing-item-number">Automatic</h4>
+                                            <h4 class="rq-listing-item-number">{{ vehicle.vehicleGearBoxType }}</h4>
                                         </div>
                                         <div class="rq-listing-item">
                                             <img src="img/listing-icon3.png" alt="">
                                             <h6 class="rq-listing-item-title">Seats</h6>
-                                            <h4 class="rq-listing-item-number">4 Adults</h4>
+                                            <h4 class="rq-listing-item-number">{{ vehicle.vehicleSeatCount }}
+                                                Adults</h4>
                                         </div>
                                         <div class="rq-listing-item">
                                             <img src="img/listing-icon5.png" alt="">
                                             <h6 class="rq-listing-item-title">Fuel Type</h6>
-                                            <h4 class="rq-listing-item-number">Petrol</h4>
+                                            <h4 class="rq-listing-item-number">{{ vehicle.vehicleFuelType }}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +81,10 @@
                             <div class="rq-blog-listing">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
-                                    <li role="presentation" class="active"><a href="#listing_tab_hor_1" aria-controls="listing_tab_hor_1" role="tab" data-toggle="tab">Features</a></li>
+                                    <li role="presentation" class="active"><a href="#listing_tab_hor_1"
+                                                                              aria-controls="listing_tab_hor_1"
+                                                                              role="tab" data-toggle="tab">Features</a>
+                                    </li>
                                 </ul>
                                 <!-- Tab panes -->
                                 <div class="tab-content">
@@ -111,9 +115,11 @@
                             <div class="listing-page-title">
                                 <h3>Location</h3>
                             </div>
-                            <div class="rq-contact-us-map"> <!-- start map portion -->
-                                <div id="listing-map"></div>
-                            </div> <!-- end map portion -->
+                            <div class="d-flex justify-content-center">
+                                <iframe class="" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2827.661534672833!2d-0.5676325851058802!3d44.86918478096975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55285fb775946d%3A0xfa412f1d465b1c06!2s171%20Rue%20Lucien%20Faure%2C%2033300%20Bordeaux!5e0!3m2!1sfr!2sfr!4v1673560588141!5m2!1sfr!2sfr"
+                                        width="700" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
 
                         </div>
                     </div>
@@ -124,82 +130,24 @@
                     </div>
                     <div class="container">
                         <div class="rq-search-container marginBttm">
-                            <div class="rq-search-single">
-                                <div class="rq-search-content">
-                                    <span class="rq-search-heading">Pickup Location</span>
-                                    <select name="categories" class="category-option">
-                                        <option value="0">Pick a location</option>
-                                        <option value="AL">Alabama</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="AZ">Arizona</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="CA">California</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="DC">District of Columbia</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IN">Indiana</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="rq-search-single">
-                                <div class="rq-search-content">
-                                    <span class="rq-search-heading">Drop off Location</span>
-                                    <select name="categories" class="category-option">
-                                        <option value="0">Pick a location</option>
-                                        <option value="AL">Alabama</option>
-                                        <option value="AK">Alaska</option>
-                                        <option value="AZ">Arizona</option>
-                                        <option value="AR">Arkansas</option>
-                                        <option value="CA">California</option>
-                                        <option value="CO">Colorado</option>
-                                        <option value="CT">Connecticut</option>
-                                        <option value="DE">Delaware</option>
-                                        <option value="DC">District of Columbia</option>
-                                        <option value="FL">Florida</option>
-                                        <option value="GA">Georgia</option>
-                                        <option value="HI">Hawaii</option>
-                                        <option value="ID">Idaho</option>
-                                        <option value="IL">Illinois</option>
-                                        <option value="IN">Indiana</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="rq-search-single">
-                                <div class="rq-search-content">
-                                    <span class="rq-search-heading">Pick up</span>
-                                    <input type="text" name="datefilter" class="rq-form-element datepicker" id="startdate" placeholder="Pick up date"/>
-                                    <i class="ion-chevron-down datepicker-arrow"></i>
-                                </div>
-                            </div>
-                            <div class="rq-search-single">
-                                <div class="rq-search-content">
-                                    <span class="rq-search-heading">Return</span>
-                                    <input type="text" name="datefilter" class="rq-form-element" id="enddate" placeholder="Return date"/>
-                                    <i class="ion-chevron-down datepicker-arrow"></i>
+                            <div class="rq-car-booking-section">
+                                <div class="booking-details marginTop">
+                                    <div class="col-md-12">
+                                        <h3 class="total-price marginTop mb-2">Total Booking Cost : <span>{{ vehicle.price }} $/day</span></h3>
+                                    </div>
                                 </div>
                             </div>
                             <div class="rq-search-single search-btn">
                                 <div class="rq-search-content">
-                                        <div class="rq-btn rq-btn-primary fluid-btn">
-                                            <button class="rq-btn rq-btn-primary btn-large">Book Now <i class="ion-android-car"></i></button>
-                                        </div>
+                                    <div class="rq-btn rq-btn-primary fluid-btn">
+                                        <button class="rq-btn rq-btn-primary btn-large"><a href="{{ path('app_checkout', {id: vehicle.id}) }}">Book Now </a><i
+                                                    class="ion-android-car"></i></button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-1"></div>
-                        <div class="rq-car-booking-section">
-                            <div class="booking-details marginTop">
-                                <div class="col-md-12">
-                                    <h3 class="total-price marginTop">Total Booking Cost : <span>$150.00</span></h3>
-                                </div>
-                            </div>
-                        </div>
+
 
                     </div>
 
@@ -211,8 +159,9 @@
 
     <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/moment.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/scripts.js') }}" ></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0QI6vd531_4xsTobCg_J1_6BZOEolRbs&libraries=visualization&callback=initMapListing">
+    <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0QI6vd531_4xsTobCg_J1_6BZOEolRbs&libraries=visualization&callback=initMapListing">
     </script>
     <script src="{{ asset('js/mapdetails.js') }}" type="text/javascript"></script>
 
