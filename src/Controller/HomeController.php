@@ -17,7 +17,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(Request $request, VehicleRepository $vehicleRepository): Response
+    public function index(Request $request, VehicleRepository $vehicleRepository, CompanyRepository $companyRepository): Response
     {
         $form = $this->createForm(SearchVehicleType::class);
         $form->handleRequest($request);
@@ -28,7 +28,8 @@ class HomeController extends AbstractController
 
             return $this->renderForm('listofcars.html.twig', [
                 'vehicles' => $vehicles,
-                'form' => $form
+                'form' => $form,
+                'companies' => $companyRepository->findAll()
             ]);
         }
 
