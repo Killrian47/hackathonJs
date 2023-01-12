@@ -1,0 +1,66 @@
+.social-login {
+  position: relative;
+  display: flex;
+  @media(max-width: @screen-xs) {
+    flex-direction: column;
+  }
+  h5 {
+    @media(max-width: @screen-xs) {
+      margin-bottom: @rq-margin-large - 5;
+    }
+  }
+
+  ul {
+    .no-padding-margin();
+    list-style: none;
+    margin-left: @rq-margin-large * 1;
+    @media(max-width: @screen-xs) {
+      margin-left: 0;
+    }
+    li {
+      display: inline-block;
+      margin: 0 @rq-margin-small;
+      margin-bottom: @rq-margin-base;
+      a {
+        width: 30px;
+        height: 30px;
+        display: block;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 34px;
+        font-size: @rq-font-size-base + 2;
+        color: @rq-text-color-white;
+        &.fb {
+          background: @rq-fb-color;
+          &:hover {
+            background: darken(@rq-fb-color, 10%);
+          }
+        }
+        &.tw {
+        background: @rq-twitter-color;
+          &:hover {
+            background: darken(@rq-twitter-color, 10%);
+          }
+        }
+        &.gp {
+          background: @rq-gp-color;
+          &:hover {
+            background: darken(@rq-gp-color, 10%);
+          }
+        }
+        &.ln {
+          background: @rq-linkedin-color;
+          &:hover {
+            background: darken(@rq-linkedin-color, 10%);
+          }
+        }
+        &.rs {
+          background: @rq-rss-color;
+          &:hover {
+            background: darken(@rq-rss-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}

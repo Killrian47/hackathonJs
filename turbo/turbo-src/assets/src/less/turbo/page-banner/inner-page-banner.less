@@ -1,0 +1,42 @@
+.inner-page-banner {
+  .Relative(100vh);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .text-left;
+  .rq-overlay {
+    .absolute-overlay();
+    background: fade(@rq-text-color-dark, 50%);
+  }
+  .rq-title-container {
+    .text-left;
+    &.text-center {
+      text-align: center;
+      .breadcrumb.rq-subtitle {
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+    padding: 0;
+    .rq-title {
+      color: @rq-text-color-white;
+      font-size: @rq-font-size-h1;
+    }
+    .breadcrumb.rq-subtitle {
+      margin: 0;
+      .text-left;
+
+      li {
+        a {
+          &:hover {
+            color: @rq-text-color-white;
+          }
+        }
+        &.active {
+          color: @rq-text-color-white;
+        }
+      }
+    }
+  }
+
+}

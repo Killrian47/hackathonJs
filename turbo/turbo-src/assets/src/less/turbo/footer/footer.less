@@ -1,0 +1,105 @@
+.rq-footer {
+  .Relative(auto);
+  font-family: @rq-font-family-secondary;
+  background: @rq-secondary-color;
+}
+
+.rq-main-footer {
+  .Relative(auto);
+  padding: @rq-padding-small * 8 0;
+  @media(max-width: @screen-sm) {
+    padding: @rq-padding-small * 4 0 0 !important;
+  }
+  .toggle-widget {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: @rq-text-color-dark;
+    border: 0;
+    padding: @rq-padding-base;
+    .text-left;
+    .text-uppercase;
+    outline: 0;
+    margin-bottom: @rq-margin-base * 2;
+    .transition(.3s);
+    &:hover {
+      color: @rq-text-color-white;
+    }
+    &:before {
+      content: "\4c";
+      font-family: 'ElegantIcons';
+      position: absolute;
+      right: 10px;
+      text-align: center;
+      color: #ffffff;
+      line-height: 20px;
+      font-size: @rq-margin-base * 2;;
+    }
+    &.active {
+      &:before {
+        content: "\4b";
+      }
+    }
+    @media(min-width: @screen-sm) {
+      display: none;
+    }
+  }
+  .footer-widget {
+    @media(max-width: @screen-sm) {
+      display: none;
+    }
+  }
+  //border-bottom: 1px solid lighten(#302f2f , 30%);
+  .widget-list {
+    position: relative;
+    width: 100%;
+    @media (max-width: @screen-md) {
+      margin-bottom: @rq-padding-small * 4;
+    }
+    ul {
+      .no-padding-margin();
+      list-style: none;
+      &.address {
+        li {
+          a {
+            font-family: @rq-font-family-primary;
+          }
+        }
+      }
+      li {
+        a {
+          .text-capitalize;
+          color: @rq-footer-link-color;
+          &:hover {
+            color: @rq-footer-link-color-hover;
+          }
+        }
+      }
+    }
+    .rq-newsletter {
+      position: relative;
+      h5 {
+        margin: 0;
+        color: @rq-footer-link-color;
+      }
+      form {
+        position: relative;
+        margin-top: @rq-margin-base;
+        input {
+          color: #fff;
+        }
+        button {
+          position: absolute;
+          right: 0;
+          top:5px;
+          background: transparent;
+          padding: 0;
+          font-size: @rq-font-size-base + 8;
+          &:hover {
+            color: @rq-bg-light;
+          }
+        }
+      }
+    }
+  }
+}

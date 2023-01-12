@@ -1,0 +1,115 @@
+// Buttons
+// --------------------------------------------------
+
+
+// Base styles
+// --------------------------------------------------
+
+.rq-btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: @btn-font-weight;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  .button-size(@padding-base-vertical; @padding-base-horizontal; @font-size-base; @line-height-base; @btn-border-radius);
+  .user-select(none);
+  font-family: @rq-font-family-primary;
+  .text-uppercase;
+  .transition(.3s);
+  &.fluid-btn {
+    width: 100%;
+  }
+  i {
+    position: relative;
+    top: 4px;
+    padding-left: 6px;
+    font-size: 20px;
+  }
+  &.border-radius {
+    border-radius: 3px;
+  }
+
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      .tab-focus();
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: @btn-default-color;
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    .box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: @cursor-disabled;
+    .opacity(.65);
+    .box-shadow(none);
+  }
+
+  a& {
+    &.disabled,
+    fieldset[disabled] & {
+      pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+    }
+  }
+  &.btn-medium {
+    padding: @rq-padding-small @rq-padding-large;
+  }
+  &.btn-small {
+    padding: @rq-padding-small - 3 @rq-padding-large;
+  }
+  &.btn-mini {
+    padding: @rq-padding-small - 5 @rq-padding-large;
+  }
+  &.border-radius-round {
+    border-radius: 30px;
+  }
+}
+.rq-btn-dashed {
+  background: transparent;
+  border: 1px dashed @rq-date-color;
+}
+
+.rq-btn-default {
+  font-weight: @rq-font-weight-bold;
+  background: #f0f0f0;
+  &:hover {
+    background: darken(#f0f0f0, 5%);
+  }
+}
+
+.rq-btn-normal {
+  background: transparent;
+  border: 0;
+  color: @rq-text-color-dark;
+  font-weight: @rq-font-weight-bolder;
+  i {
+    position: relative;
+    top: @rq-padding-small - 6;
+    padding-left: @rq-padding-small - 4;
+    font-size: @rq-font-size-base + 6;
+  }
+}
+
+
+

@@ -1,0 +1,38 @@
+.newsletter-content {
+  .Relative(auto);
+  h2 {
+    font-weight: @rq-font-weight-light;
+    margin: 0;
+    padding: @rq-padding-base 0;
+    @media(max-width: @screen-sm) {
+      margin-bottom: @rq-margin-base;
+      font-size: @rq-font-size-h3;
+    }
+    strong {
+      color: @rq-primary-color;
+    }
+  }
+}
+
+.rq-newsletter-form {
+  position: relative;
+  input {
+    width: 100%;
+    height: @rq-padding-base * 4;
+    background: @rq-bg-body;
+    .border(darken(@rq-bg-light, 15%));
+    padding: @rq-padding-small + 3 @rq-padding-large * 5 + 6 @rq-padding-small @rq-padding-large;
+    outline: 0;
+    .transition(.3s);
+    color: @rq-text-color-dark;
+    &:focus,
+    &:active {
+      border-color: @rq-text-color-dark;
+    }
+  }
+  button {
+    position: absolute;
+    right: @rq-font-size-base - 1;
+    top: @rq-font-size-base - 1;
+  }
+}

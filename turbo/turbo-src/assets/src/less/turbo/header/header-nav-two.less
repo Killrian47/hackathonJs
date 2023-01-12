@@ -1,0 +1,136 @@
+
+
+.home-two-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  &.nav-two-bg {
+    background: @rq-secondary-color !important;
+    padding-bottom: @rq-padding-base !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    @media(min-width: @screen-md) {
+      animation: opacity .5s;
+    }
+
+  }
+  &.navbar.navbar-default {
+    background: transparent;
+    padding: 0;
+    @media(max-width: @screen-md) {
+      background: @rq-secondary-color;
+      padding: @rq-padding-small + 2 0;
+    }
+    .navbar-brand {
+      display: none;
+      @media(max-width: @screen-md) {
+        display: block;
+        padding-top: 10px;
+      }
+    }
+  }
+  .navbar-nav {
+    width: 100%;
+    position: relative;
+    li {
+      &.logo {
+        top: -7px;
+        &:hover {
+          a {
+            @media( min-width: @screen-md) {
+              border-top: 3px solid transparent !important;
+            }
+          }
+        }
+
+        padding: 0 14%;
+        @media (max-width: 1200px) {
+          padding: 0 6%;
+        }
+        @media (max-width: @screen-md) {
+         display: none;
+        }
+      }
+      &:hover {
+        a {
+          color: @rq-text-color-white;
+        }
+      }
+      &.active {
+        > a,
+        a.dropdown-toggle {
+          color: @rq-text-color-white;
+          @media (min-width: @screen-md) {
+            border-top: 3px solid @rq-text-color-white;
+          }
+          &:hover {
+            color: @rq-text-color-white;
+          }
+        }
+      }
+      &.login-register-link {
+        margin: 0 @rq-margin-base;
+        top: 0;
+        &:hover {
+          a {
+            color: @rq-text-color-white;
+          }
+        }
+        a {
+          padding: 25px 0 5px;
+        }
+      }
+      > a {
+        font-weight: @rq-font-weight-bolder;
+        @media( min-width: @screen-md) {
+          padding-top: @rq-padding-large;
+          border-top: 3px solid transparent;
+        }
+        &:hover {
+          color: @rq-text-color-white;
+          @media( min-width: @screen-md) {
+            border-top: 3px solid @rq-text-color-white;
+          }
+        }
+      }
+      .dropdown-menu {
+        li {
+          a {
+            border-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.nav-two-bg {
+  background: @rq-secondary-color !important;
+  padding-bottom: @rq-padding-base !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  @media(min-width: @screen-md) {
+    animation: opacity .5s;
+  }
+
+}
+
+
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  30% {
+
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

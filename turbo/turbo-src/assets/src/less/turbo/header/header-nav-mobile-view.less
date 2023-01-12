@@ -1,0 +1,103 @@
+@media (max-width: @screen-md) {
+  .navbar-default {
+    .navbar-nav {
+      margin-top: @rq-margin-base;
+      background: @rq-secondary-color;
+      > .active {
+        > a {
+          &:hover,
+          &:focus {
+            background: transparent;
+            color: @rq-primary-color;
+          }
+        }
+      }
+      > li {
+        &.login-register-link {
+          text-align: center;
+          margin-left: 0;
+        }
+        &:hover {
+          a {
+            border-bottom: 0;
+          }
+        }
+        margin: 0;
+        border-bottom: 1px solid darken(@rq-secondary-color, 10%);
+        &.active,
+        &.open {
+          > a {
+            border-bottom: 0;
+            color: @rq-primary-color;
+            &:hover,
+            &:focus {
+              color: @rq-bg-body;
+              background: transparent;
+            }
+          }
+        }
+        a {
+          color: #fff;
+          span {
+            float: right;
+          }
+          &:hover {
+            border-bottom: 0;
+            color: @rq-primary-color;
+          }
+        }
+      }
+      .open {
+        > .dropdown-menu {
+          padding-bottom: @rq-padding-base;
+          > li {
+            >  a {
+              color: darken(@rq-bg-light, 30%);
+              &:hover,
+              &:focus {
+                color: @rq-bg-body;
+                border-bottom: o;
+              }
+            }
+            .dropdown-menu {
+              display: block;
+              > li {
+                a {
+                  color: darken(@rq-bg-light, 30%);
+                  &:hover {
+                    color: @rq-bg-body;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .navbar-toggle {
+      border-color: transparent;
+      .icon-bar {
+              }
+      &:hover {
+        background: transparent;
+        .icon-bar {
+          background-color: @rq-primary-color;
+        }
+      }
+      &:focus {
+        background: transparent;
+      }
+      .border-radius(0);
+      .icon-bar {
+        background-color: @rq-bg-body;
+      }
+    }
+  }
+  .ion-chevron-right {
+    &:before {
+      content: "\f123" !important;
+    }
+  }
+}
+
+

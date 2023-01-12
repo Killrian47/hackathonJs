@@ -1,0 +1,37 @@
+.rq-grand-total {
+  position: relative;
+  padding: @rq-padding-small * 4;
+  background: @rq-total-price-bg;
+  h5 {
+    margin: 0;
+    font-size: @rq-font-size-base + 1;
+    .text-uppercase;
+    font-weight: @rq-font-weight-bold;
+    display: flex;
+    justify-content: flex-end;
+    span {
+      padding-left: @rq-padding-large;
+    }
+  }
+  h4 {
+    margin: 0;
+    .text-capitalize;
+    margin-top: @rq-margin-large;
+    display: flex;
+    justify-content: space-between;
+    font-weight: @rq-font-weight-bolder;
+    padding-bottom: @rq-padding-base;
+    border-bottom: 1px solid @rq-date-color;
+    margin-bottom: @rq-margin-large;
+    span {
+      color :@rq-price-color;
+    }
+  }
+  p {
+    position: relative;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: @rq-padding-large - 5;
+  }
+}

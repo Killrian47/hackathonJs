@@ -27,8 +27,13 @@ npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
+/yarn.lock
+yarn.lock
+
 ###> IDE ###
 .idea
 DS_Store
+package-lock.jsong
+yarn.lock
 ###< IDE ###
 
