@@ -125,7 +125,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/listofcars', name: 'app_listofcars')]
-    public function listofcarsAll(Request $request, VehicleRepository $vehicleRepository): Response
+    public function listofcarsAll(Request $request, VehicleRepository $vehicleRepository, CompanyRepository $companyRepository): Response
     {
         $form = $this->createForm(SearchVehicleType::class);
         $form->handleRequest($request);
@@ -137,11 +137,13 @@ class HomeController extends AbstractController
 
             return $this->renderForm('listofcars.html.twig', [
                 'vehicles' => $vehicles,
-                'form' => $form
+                'form' => $form,
+                'companies' => $companyRepository->findAll()
             ]);
         }
         return $this->renderForm('listofcars.html.twig', [
             'vehicles' => $vehicles,
+            'companies' => $companyRepository->findAll(),
             'form' => $form
         ]);
     }
