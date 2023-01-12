@@ -1,0 +1,39 @@
+.rq-view-more {
+  position: relative;
+  width: 100%;
+  margin-top: @rq-margin-base * 2;
+  margin-bottom: @rq-margin-base - 5;
+  .text-center;
+  a {
+    position: relative;
+    color: @rq-text-color-dark;
+    .text-uppercase;
+    padding: @rq-padding-base 0;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 36%;
+      height: 2px;
+      width: 50px;
+      background: #000;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 36%;
+      height: 2px;
+      width: 50px;
+      background: #000;
+      .transition(.3s);
+    }
+    &:hover {
+      &::after {
+        top: 100%;
+      }
+    }
+  }
+}
+
+

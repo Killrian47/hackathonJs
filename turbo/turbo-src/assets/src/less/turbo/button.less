@@ -1,0 +1,43 @@
+.rq-btn-primary {
+  background: @rq-primary-color;
+  color: @rq-bg-light;
+  font-family: @rq-font-family-primary;
+  font-weight: @rq-font-weight-bold;
+  &.fluid {
+    width:100%;
+  }
+  &.btn-large {
+    height: 50px;
+    padding-left: @rq-padding-base * 2 + 10;
+    padding-right: @rq-padding-base * 2 + 10;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: darken(@rq-primary-color, 5%);
+    color: @rq-bg-body;
+  }
+}
+
+.rq-btn-transparent {
+  background: transparent;
+  color: @rq-text-color-dark;
+  font-family: @rq-font-family-primary;
+  font-weight: @rq-font-weight-bolder;
+  line-height: 37px;
+  .border(@rq-date-color);
+  height: 50px;
+  padding-left: 40px;
+  padding-right: 40px;
+  &.fluid {
+    width:100%;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: transparent;
+    border-color: @rq-text-color-dark;
+  }
+}

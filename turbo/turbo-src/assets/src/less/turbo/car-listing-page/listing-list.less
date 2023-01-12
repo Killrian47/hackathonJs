@@ -1,0 +1,80 @@
+.rq-listing-list {
+  position: relative;
+  .col-md-4 {
+    width: 50%;
+    @media (max-width: @screen-md ) {
+      width: 100%;
+    }
+  }
+  .listing-single {
+    display: flex;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    @media (max-width: @screen-sm ) {
+      flex-direction: column;
+    }
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    .listing-img {
+      width: 45%;
+      height: 263px;
+      overflow: hidden;
+      @media(max-width: @screen-sm) {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+      }
+      img {
+        height: 100%;
+        width: auto;
+        @media(max-width: @screen-sm) {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+    .listing-details {
+      width: 55%;
+      .text-left;
+      @media(max-width: @screen-sm) {
+        width: 100%;
+      }
+      border-top: 1px solid @rq-date-color;
+      border-left: 0;
+      @media (max-width: @screen-sm ) {
+        border-top: 0;
+        border-left: 1px solid @rq-date-color;
+      }
+      paddding: @rq-padding-base * 2;
+      .car-brand {
+        display: none;
+      }
+      h3 {
+        font-size: @rq-font-size-h4;
+        clor: @rq-text-color-dark;
+        margin: 0;
+        white-space: nowrap;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .rating-list {
+        display: block;
+        position: relative;
+        li {
+          display: inline-block;
+          color: @rq-primary-color;
+        }
+      }
+      .listing-footer {
+        margin-top: @rq-margin-base;
+        padding-top: @rq-padding-base;
+      }
+    }
+  }
+}

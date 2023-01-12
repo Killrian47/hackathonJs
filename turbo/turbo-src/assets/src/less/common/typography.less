@@ -1,0 +1,68 @@
+/* Typography */
+/* ======================== */
+
+/* Headings */
+
+h1, .h1 {
+  font-family: @rq-font-family-heading;
+  line-height: @rq-font-size-h1;
+  color: @rq-text-color-dark;
+  font-weight: @rq-font-weight-bold;
+  margin-top: @rq-line-height-base;
+  margin-bottom: @rq-line-height-base;
+}
+h2, .h2,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: @rq-font-family-heading-secondary;
+  color: @rq-text-color-dark;
+  font-weight: @rq-font-weight-base;
+  margin-top: @rq-line-height-base;
+  margin-bottom: @rq-line-height-base;
+}
+h3, .h3, {
+  font-family: @rq-font-family-secondary;
+  font-weight: 100;
+  color: @rq-text-color-light-dark;
+}
+
+h1, .h1 { font-size: @rq-font-size-h1; }
+h2, .h2 { font-size: @rq-font-size-h2; }
+h3, .h3 { font-size: @rq-font-size-h3; }
+h4, .h4 { font-size: @rq-font-size-h4; }
+h5, .h5 { font-size: @rq-font-size-h5; }
+h6, .h6 { font-size: @rq-font-size-h6; }
+
+/* Basic Typography Styles */
+
+p {
+  margin: 0 0 @rq-line-height-base;
+  font-weight: @rq-font-weight-bold;
+  line-height: @rq-line-height-base + 3;
+  font-family: @rq-font-family-primary;
+  color: @rq-text-color-light-dark;
+}
+
+a {
+  font-size: inherit;
+  font-family: @rq-font-family-primary;
+}
+
+
+
+// Alignment
+.text-left           { text-align: left; }
+.text-right          { text-align: right; }
+.text-center         { text-align: center; }
+.text-justify        { text-align: justify; }
+.text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.text-lowercase      { text-transform: lowercase; }
+.text-uppercase      { text-transform: uppercase; }
+.text-capitalize     { text-transform: capitalize; }
+
+// List style
+.list-unstyled       { list-style: none }
+

@@ -1,0 +1,84 @@
+.rq-car-booking-section {
+  .Relative(auto);
+  .rq-search-container {
+    box-shadow: none;
+    border: 1px solid darken(@rq-line-color, 5%);
+  }
+  .booking-details {
+    position: relative;
+    .booking-section-single {
+      position: relative;
+      padding: @rq-padding-base * 4 0;
+      @media(max-width: @screen-sm) {
+        padding: @rq-padding-base * 4 0 0;
+      }
+
+      .section-adding-option {
+        position: relative;
+        label {
+          display: inline-block;
+          width: 100%;
+          margin-bottom: @rq-margin-small;
+          padding-left: @rq-padding-large + @rq-padding-base;
+          font-weight: @rq-font-weight-bold;
+          span {
+            color: @rq-uncheck-color;
+            float: right;
+            @media(max-width: @screen-xs) {
+              float: none;
+              display: block;
+            }
+          }
+
+        }
+      }
+    }
+  }
+  .total-price {
+    position: relative;
+    margin: 0;
+    font-family: @rq-font-family-primary;
+    .text-center;
+    font-weight:@rq-font-weight-base;
+    color: @rq-text-color-dark;
+    @media(max-width: @screen-sm) {
+      margin-top: @rq-margin-large * 2;
+      line-height: @rq-font-size-h2;
+    }
+    span {
+      color: @rq-uncheck-color;
+      font-weight: @rq-font-weight-bolder;
+    }
+  }
+  .book-btn {
+    position: relative;
+    width: 100%;
+    .text-center;
+    margin-top: @rq-margin-large * 2;
+
+  }
+}
+
+.rq-checkbox-secondary {
+  position: relative;
+  input[type="checkbox"] {
+    display: none;
+  }
+  label {
+    cursor: pointer;
+    padding-left: @rq-padding-large;
+    font-weight: normal;
+    color: @rq-text-color-dark;
+    &:before {
+      content: "\f372";
+      font-family: 'Ionicons';
+      position: absolute;
+      left: 0;
+      font-size: @rq-font-size-base + 3;
+    }
+  }
+  input[type="checkbox"]:checked + label:before {
+    content: "\f374";
+    color: @rq-check-color;
+  }
+}

@@ -1,0 +1,100 @@
+
+.child-tab-wrapper {
+  .tab-content {
+    position: relative;
+    margin-top: -(@rq-margin-base * 4);
+    width: 50%;
+    float: right;
+    .text-center;
+    @media( max-width: @screen-md) {
+      width: 100%;
+      float: none;
+      margin-top: @rq-margin-large * 3;
+    }
+  }
+  .rq-tab-car-details {
+    position: relative;
+    width: 100%;
+    .car-logo {
+      position: relative;
+      width: 50px;
+      margin: 0 auto;
+      img {
+        width: 100%;
+      }
+    }
+   h3 {
+     color: @rq-text-color-dark;
+   }
+   .large-image-wrapper {
+     position: relative;
+     width: 100%;
+     margin: @rq-padding-base * 3 auto 0;
+     padding-top: @rq-padding-base * 2 + 10;
+     height: 270px;
+     @media(max-width: @screen-lg) {
+       height: 270px;
+       padding-top: @rq-padding-base * 4;
+     }
+     @media ( min-width: 1600px) {
+       height: 350px;
+       padding-top: @rq-padding-base * 4;
+     }
+     @media ( max-width: @screen-md) {
+       height: 390px;
+       padding-top: @rq-padding-base * 2 + 10;
+     }
+     @media ( max-width: @screen-sm) {
+       height: 270px;
+     }
+     @media (max-width: @screen-xs) {
+       height: 190px;
+     }
+     .image-bg {
+       position: absolute;
+       top: 0;
+       left: 15%;
+       background: @rq-primary-color;
+       display: block;
+       width: 70%;
+       height: 100%;
+       @media (max-width: @screen-md) {
+         height: 100%;
+       }
+       &.ford {
+         background: @rq-ford-color;
+       }
+       &.kia {
+         background: @rq-kia-color;
+       }
+     }
+   }
+   .car-details-option {
+     margin-top: @rq-margin-large;
+     position: relative;
+     display: flex;
+     justify-content: space-around;
+     color: @rq-text-color-dark;
+     @media(max-width: @screen-sm) {
+       justify-content: flex-start;
+       flex-direction: column;
+     }
+     span {
+       @media(max-width: @screen-sm) {
+         width: 100%;
+         margin-bottom: @rq-margin-small;
+       }
+     }
+     i {
+       color: @rq-text-color-base;
+       padding-right: 7px;
+       font-size: @rq-font-size-base + 3;
+     }
+     .red-section {
+       color: @rq-red-color;
+       padding: 0 3px;
+       font-weight: @rq-font-weight-bold;
+     }
+   }
+  }
+}
