@@ -1,30 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Vehicle index{% endblock %}
-
 {% block body %}
+
     <h1>Vehicle index</h1>
 
     {{ form_start(form) }}
-    {{ form_row(form, {attr : { class : 'rounded' }}) }}
+    {{ form_row(form) }}
     <button type="submit">Submit</button>
     {{ form_end(form) }}
-    <table class="table w-75 mx-auto bg-white rounded">
+    <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>VehicleBrand</th>
-                <th>VehicleModel</th>
-                <th>VehicleType</th>
-                <th>VehicleGearBoxType</th>
-                <th>VehicleSeatCount</th>
-                <th>VehicleDoorCount</th>
-                <th>VehicleFuelType</th>
-                <th>Year</th>
-                <th>Status</th>
-                <th>Price</th>
-                <th>actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>VehicleBrand</th>
+            <th>VehicleModel</th>
+            <th>VehicleType</th>
+            <th>VehicleGearBoxType</th>
+            <th>VehicleSeatCount</th>
+            <th>VehicleDoorCount</th>
+            <th>VehicleFuelType</th>
+            <th>Year</th>
+            <th>Status</th>
+            <th>Price</th>
+            <th>actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for vehicle in vehicles %}
@@ -42,7 +41,7 @@
                 <td>{{ vehicle.price }}</td>
                 <td>
                     <a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">show</a>
-{#                    <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a>#}
+                    {#                    <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">edit</a>#}
                 </td>
             </tr>
         {% else %}
@@ -53,6 +52,6 @@
         </tbody>
     </table>
 
-{#    <a href="{{ path('app_vehicle_new') }}">Create new</a>#}
+    {#    <a href="{{ path('app_vehicle_new') }}">Create new</a>#}
 
 {% endblock %}

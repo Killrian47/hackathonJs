@@ -6,6 +6,7 @@ use App\Entity\Vehicle;
 use App\Form\VehicleType;
 use App\Repository\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,11 +14,23 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/vehicle')]
 class VehicleController extends AbstractController
 {
-    #[Route('/', name: 'app_vehicle_index', methods: ['GET'])]
-    public function index(VehicleRepository $vehicleRepository): Response
+    #[Route('/', name: 'app_vehicle_index')]
+    public function index(VehicleRepository $vehicleRepository, Request $request): Response
     {
+        $form = $this->createForm(SearchType::class);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->getData();
+            $vehicles = $vehicleRepository->findVehicleByFuelType($search);
+
+            return $this->renderForm('vehicle/searchedVehicle.html.twig', [
+                'vehicles' => $vehicles,
+                'form' => $form
+            ]);
+        }
         return $this->render('vehicle/index.html.twig', [
             'vehicles' => $vehicleRepository->findAll(),
+            'form' => $form
         ]);
     }
 
