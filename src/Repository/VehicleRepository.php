@@ -39,6 +39,20 @@ class VehicleRepository extends ServiceEntityRepository
         }
     }
 
+    public function findVehicleByFuelType(string $name): array
+    {
+        $queryBuilder = $this->createQueryBuilder('v')
+            ->where('v.vehicleFuelType LIKE :name')
+            ->orWhere('v.vehicleBrand LIKE :name')
+            ->orWhere('v.vehicleType LIKE :name')
+            ->orWhere('v.vehicleGearBoxType LIKE :name')
+            ->orWhere('v.vehicleModel LIKE :name')
+            ->setParameter(':name', $name . '%')
+            ->getQuery();
+
+        return$queryBuilder->getResult();
+    }
+
 //    /**
 //     * @return VehicleFixtures[] Returns an array of VehicleFixtures objects
 //     */
