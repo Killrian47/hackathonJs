@@ -1,0 +1,73 @@
+.rq-registration-content-single {
+  position: relative;
+  margin-bottom: @rq-margin-base * 6;
+  &.small-bottom-margin {
+    margin-bottom: @rq-margin-large;
+  }
+  h4 {
+    margin: 0;
+    .text-capitalize;
+    font-weight: @rq-font-weight-bolder;
+  }
+  .subtitle {
+    margin: 0;
+  }
+  h5 {
+    .text-uppercase;
+    margin: 0;
+    font-weight: @rq-font-weight-bolder;
+    padding-top: @rq-padding-small - 5;
+  }
+  .rq-login-form {
+    &.no-border {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    position: relative;
+    padding: 0 0 @rq-padding-base * 4;
+    border-bottom: 1px solid @rq-bg-light;
+    .remember-me {
+      @media ( max-width: @screen-md) {
+        margin-top: @rq-margin-base;
+      }
+      position: relative;
+      .rq-checkbox {
+        padding-right: @rq-padding-large * 2;
+        label {
+          font-size: @rq-font-size-base - 1;
+          padding-left: @rq-padding-large - 2;
+          &:before {
+            top: -1px;
+            font-size: @rq-font-size-base;
+          }
+        }
+      }
+      .forgotpass {
+        @media(max-width: 400px) {
+         display: block;
+        }
+        a {
+          color: @rq-comment-reply-color;
+          font-size: @rq-font-size-base - 1;
+        }
+      }
+    }
+  }
+  form {
+    position: relative;
+    width: 100%;
+    padding-top: @rq-padding-base * 4;
+    margin-bottom: @rq-padding-large * 2;
+    .rq-btn {
+      height: @rq-padding-base * 3 + 10;
+      padding-left: @rq-padding-small * 4;
+      padding-right: @rq-padding-small * 4;
+    }
+    .register-button {
+      position: relative;
+      width: 100%;
+      margin-top: @rq-margin-base * 1.5;
+      margin-bottom :@rq-padding-small;
+    }
+  }
+}

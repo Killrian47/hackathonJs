@@ -1,0 +1,46 @@
+.rq-blog-grid-single {
+  .Relative(360px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: @rq-padding-base + 5 @rq-padding-large;
+  margin-bottom: @rq-padding-base * 2;
+  .rq-overlay {
+    .transition(.3s);
+    .absolute-overlay();
+    background: -webkit-linear-gradient(top, transparent 50% ,rgba(0,0,0,.1), rgba(0,0,0, .5), rgba(0,0,0, .8));
+    background: -o-linear-gradient(top, transparent 50% ,rgba(0,0,0,.1),rgba(0,0,0, .5), rgba(0,0,0, .8));
+    background: -moz-linear-gradient(top, transparent 50,rgba(0,0,0,.1), rgba(0,0,0, .5), rgba(0,0,0, .8));
+    background: linear-gradient(top, transparent 50%,rgba(0,0,0,.1), rgba(0,0,0, .5), rgba(0,0,0, .8));
+    :hover& {
+      background-color: rgba(0,0,0, .4);
+    }
+  }
+  span {
+    position: relative;
+    z-index: 20;
+  }
+  .company-name {
+    font-family: @rq-font-family-primary;
+    .text-uppercase;
+    font-size: @rq-font-size-base + 4;
+    color: @rq-text-color-light;
+    padding-bottom: @rq-padding-small;
+  }
+  .rq-listing-meta {
+    position: relative;
+    color: @rq-date-color;
+    font-weight: @rq-font-weight-bold;
+    font-size: @rq-font-size-base - 1;
+    font-family: @rq-font-family-primary;
+    b {
+      color: @rq-text-color-light-dark;
+      font-weight: normal;
+      padding-right: 3px;
+
+    }
+    .v-line {
+      padding: 0 @rq-padding-small;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.rq-search-single {
+  position: relative;
+  width: 20%;
+  @media(max-width: @screen-md) {
+    width: 100%;
+    margin-bottom: @rq-margin-small;
+  }
+  height: @rq-padding-base * 4;
+  .text-left;
+  padding: @rq-padding-base 0 @rq-padding-base @rq-padding-base;
+  &.search-btn {
+    padding: 0;
+    position: relative;
+    .rq-search-content {
+      border-right: 0;
+      border-radius: 0 @rq-border-radius-base @rq-border-radius-base 0;
+      .rq-btn {
+        font-size: @rq-font-size-base - 1;
+        height: 100%;
+        border-radius: 0 @rq-border-radius-base @rq-border-radius-base 0;
+        font-weight: @rq-font-weight-bolder;
+        @media (max-width: @screen-md) {
+          border-radius: @rq-border-radius-base;
+          margin-top: @rq-margin-base;
+        }
+        i {
+          font-size: @rq-font-size-base + 4;
+          position: relative;
+          top: 4px;
+          padding-left: @rq-padding-small - 6;
+        }
+      }
+    }
+  }
+}
+
+.rq-search-content {
+  .Relative(100%);
+  .border-right(darken(@rq-bg-light, 5%));
+  @media (max-width: @screen-md) {
+    border-right: 0;
+  }
+  &.last-child {
+    .border-right(transparent);
+  }
+  .rq-search-heading {
+    display: block;
+    font-size: @rq-font-size-base - 2;
+    color: @rq-primary-color;
+    font-weight: @rq-font-weight-bolder;
+    .text-uppercase;
+    font-family: @rq-font-family-secondary;
+    line-height: @rq-font-size-base - 2;
+  }
+  input[type="text"] {
+    .no-border();
+    color: @rq-text-color-dark;
+    font-weight: @rq-font-weight-bold;
+    font-size: @rq-font-size-base - 1;
+
+  }
+}
+
+.datepicker-arrow {
+  position: absolute;
+  top: 13px;
+  right: 15px;
+  border: 0;
+  color: #a6a6a6;
+  font-size: 12px;
+}
+
+
+
+.active.start-date.available,
+.active.end-date.in-range.available {
+  background: @rq-primary-color;
+  &:hover {
+    background: @rq-primary-color;
+  }
+}
+.active.end-date.in-range.available.off {
+  background: inherit;
+  &:hover {
+    color: inherit;
+  }
+}
+
+.daterangepicker td.in-range {
+  background: fade(@rq-primary-color, 30%);
+}
+
+.range_inputs .btn-success {
+  background: @rq-primary-color;
+  border-color: @rq-primary-color;
+  &:hover {
+    background: darken(@rq-primary-color, 5%);
+    border-color: darken(@rq-primary-color, 5%)
+  }
+}
+
+.daterangepicker_input {
+  .input-mini.active {
+    border-color: @rq-primary-color;
+  }
+}

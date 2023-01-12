@@ -1,0 +1,50 @@
+.comment-respond {
+  position: relative;
+  margin-bottom: @rq-margin-large * 3;
+  .continue-btn {
+    border-bottom: 1px solid @rq-text-color-dark;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: @rq-margin-base;
+  }
+}
+.comment-input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid darken(@rq-bg-light, 5%);
+  margin-bottom: @rq-margin-large;
+  padding: @rq-padding-small 0;
+  .transition(.3s);
+  outline: 0;
+
+  &:focus,
+  &:active {
+    border-color: @rq-text-color-dark;
+  }
+}
+textarea {
+  &.comment-input {
+     height: 150px;
+  }
+}
+
+input,
+textarea {
+  &.comment-input {
+    &::-webkit-input-placeholder {
+      color: @rq-text-color-light-dark;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: @rq-text-color-light-dark;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: @rq-text-color-light-dark;
+    }
+
+    &:-ms-input-placeholder {
+      color: @rq-text-color-light-dark;
+    }
+  }
+}

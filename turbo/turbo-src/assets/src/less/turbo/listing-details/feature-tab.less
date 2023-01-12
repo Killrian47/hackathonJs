@@ -1,0 +1,111 @@
+.rq-feature-tab {
+  position: relative;
+  .nav-tabs {
+    border-bottom: 1px solid @rq-line-color;
+    padding-bottom: @rq-padding-small;
+    li {
+      margin-bottom: 0;
+      a {
+        font-size: @rq-font-size-h3;
+        font-weight: @rq-font-weight-base;
+        @media(max-width: 500px) {
+          font-size: @rq-font-size-base;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .tab-content {
+    position: relative;
+    padding: @rq-padding-small * 6;
+    @media(max-width: @screen-md) {
+      padding: @rq-padding-small * 3 0;
+    }
+    p {
+      color: @rq-text-color-dark;
+    }
+    .rq-single-post-header {
+      border-bottom: 0;
+      padding-top: 0;
+      .author-img {
+        top: 0;
+        width: 75px;
+        height: 75px;
+      }
+      .author-name {
+        margin-bottom: @rq-margin-small;
+        span {
+          margin-left: @rq-margin-large;
+          color : @rq-primary-color;
+        }
+      }
+    }
+    .review-form {
+      position: relative;
+      h4 {
+        margin-bottom: @rq-margin-small;
+        .text-capitalize;
+        color: @rq-text-color-dark;
+        font-weight: @rq-font-weight-bold;
+      }
+      .review-star {
+        position: relative;
+        margin-bottom: @rq-margin-base;
+        a {
+          color: @rq-text-color-dark;
+          font-size: @rq-font-size-base + 4;
+          &:hover {
+             color: @rq-primary-color;
+          }
+        }
+      }
+      .comment-respond {
+        margin-bottom: 0;
+      }
+    }
+    ul {
+      list-style: none;
+      .no-padding-margin();
+      padding-left: @rq-margin-large;
+      li {
+        position: relative;
+        display: inline-block;
+        width: 33%;
+        color: @rq-text-color-dark;
+        padding-left: @rq-padding-small * 4;
+        font-weight: @rq-font-weight-bold;
+        margin-top: @rq-margin-small - 4;
+        margin-bottom: @rq-margin-small  - 4;
+        @media ( max-width: 1200px) {
+          width: 32%;
+        }
+        @media (max-width: @screen-sm) {
+          padding-right: @rq-padding-large;
+          width: 46%;
+        }
+        @media(max-width: 520px) {
+          width: 100%;
+        }
+        &.checked {
+          &:before {
+            content: "\4e";
+            font-family: 'ElegantIcons';
+            position: absolute;
+            left: 0;
+            color: @rq-check-color;
+          }
+        }
+        &.unchecked {
+          &:before {
+            content: "\4d";
+            font-family: 'ElegantIcons';
+            position: absolute;
+            left: -2px;
+            color: @rq-uncheck-color;
+            font-size: @rq-font-size-base + 4;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+
+.element-single {
+  position: relative;
+  margin-bottom: @rq-margin-large * 4;
+  display: block;
+}
+.elements-title {
+  color: @rq-text-color-dark;
+  font-family: @rq-font-family-primary;
+  margin: 0;
+  padding-bottom: @rq-padding-base * 3;
+  font-weight: @rq-font-weight-bolder;
+
+}
+
+#elements-menu-sticky-wrapper {
+  @media(max-width: @screen-md) {
+    display: none;
+  }
+}
+#elements-menu {
+  @media(max-width: @screen-md) {
+    display: none;
+  }
+}
+.button-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: @rq-margin-large * 2;
+  @media(max-width: @screen-xs) {
+    flex-direction: column;
+    align-items: center;
+  }
+  button {
+    margin-right: @rq-margin-base;
+    margin-bottom: @rq-margin-base;
+  }
+}
+
+.rq-facts-box {
+  position: relative;
+}
+.rq-facts-single {
+  position: relative;
+  @media(max-width: @screen-sm) {
+    .text-center;
+  }
+  i {
+    color: @rq-primary-color;
+    font-size: @rq-font-size-h2;
+  }
+  .fact-box-count{
+   margin: 0;
+   display: block;
+   font-size: @rq-font-size-h3;
+   color: @rq-text-color-dark;
+   font-family: @rq-font-family-primary;
+   padding: @rq-padding-base 0 @rq-padding-small - 5;
+   font-weight: @rq-font-weight-bolder;
+ }
+ p {
+   font-size: @rq-font-size-base - 1;
+   font-weight: @rq-font-weight-bold;
+ }
+}
+
+
+
+.rq-progress-bar-content {
+  position: relative;
+}
+.cirle-progress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: @rq-margin-large * 2;
+  margin-bottom: @rq-margin-large * 2;
+  .progress-single {
+    margin-right: 0;
+    .c100 {
+      background-color: #D8D6D6;
+    }
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: @rq-primary-color;
+    }
+
+  }
+}
+
+.progress-single {
+  position: relative;
+  margin-bottom: @rq-margin-large;
+  .progress-title {
+    color: @rq-text-color-dark;
+    font-weight: @rq-font-weight-base;
+    .text-uppercase;
+    font-size: @rq-font-size-base;
+    margin: 0;
+    padding-bottom: @rq-padding-small;
+  }
+  .progress {
+    height: 4px;
+    border-radius: 0;
+    overflow: visible;
+    .progress-bar {
+      color: @rq-primary-color;
+      background: @rq-primary-color;
+      box-shadow: none;
+      span {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: @rq-font-size-base + 4;
+
+      }
+    }
+  }
+  .fill,
+  .bar{
+    border-color: @rq-primary-color !important;
+  }
+}

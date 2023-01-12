@@ -29,19 +29,11 @@ class Company
 
     #[ORM\OneToMany(mappedBy: 'company', targetEntity: User::class)]
     private Collection $users;
-
-    #[ORM\OneToMany(mappedBy: 'toto', targetEntity: User::class)]
-    private Collection $usersToto;
-
-    #[ORM\OneToMany(mappedBy: 'tata', targetEntity: User::class)]
-    private Collection $usersTata;
-
+    
     public function __construct()
     {
         $this->vehicles = new ArrayCollection();
         $this->users = new ArrayCollection();
-        $this->usersToto = new ArrayCollection();
-        $this->usersTata = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -139,66 +131,6 @@ class Company
             // set the owning side to null (unless already changed)
             if ($user->getCompany() === $this) {
                 $user->setCompany(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUsersToto(): Collection
-    {
-        return $this->usersToto;
-    }
-
-    public function addUsersToto(User $usersToto): self
-    {
-        if (!$this->usersToto->contains($usersToto)) {
-            $this->usersToto->add($usersToto);
-            $usersToto->setToto($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUsersToto(User $usersToto): self
-    {
-        if ($this->usersToto->removeElement($usersToto)) {
-            // set the owning side to null (unless already changed)
-            if ($usersToto->getToto() === $this) {
-                $usersToto->setToto(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUsersTata(): Collection
-    {
-        return $this->usersTata;
-    }
-
-    public function addUsersTatum(User $usersTatum): self
-    {
-        if (!$this->usersTata->contains($usersTatum)) {
-            $this->usersTata->add($usersTatum);
-            $usersTatum->setTata($this);
-        }
-
-        return $this;
-    }
-
-    public function removeUsersTatum(User $usersTatum): self
-    {
-        if ($this->usersTata->removeElement($usersTatum)) {
-            // set the owning side to null (unless already changed)
-            if ($usersTatum->getTata() === $this) {
-                $usersTatum->setTata(null);
             }
         }
 

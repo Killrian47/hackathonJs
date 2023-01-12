@@ -47,12 +47,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToOne(inversedBy: 'users')]
     private ?Company $company = null;
 
-    #[ORM\ManyToOne(inversedBy: 'usersToto')]
-    private ?Company $toto = null;
-
-    #[ORM\ManyToOne(inversedBy: 'usersTata')]
-    private ?Company $tata = null;
-
     public function __construct()
     {
         $this->vehicle = new ArrayCollection();
@@ -215,30 +209,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setCompany(?Company $company): self
     {
         $this->company = $company;
-
-        return $this;
-    }
-
-    public function getToto(): ?Company
-    {
-        return $this->toto;
-    }
-
-    public function setToto(?Company $toto): self
-    {
-        $this->toto = $toto;
-
-        return $this;
-    }
-
-    public function getTata(): ?Company
-    {
-        return $this->tata;
-    }
-
-    public function setTata(?Company $tata): self
-    {
-        $this->tata = $tata;
 
         return $this;
     }
