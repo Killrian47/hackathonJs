@@ -15,7 +15,7 @@ class SearchVehicleType extends AbstractType
         $builder
             ->add('search', SearchType::class, [
                 'attr' => [
-                    'class' => 'rounded-5 p-2 ',
+                    'class' => '',
                 ],
                 'label_attr' => [
                     'class' => 'd-none'

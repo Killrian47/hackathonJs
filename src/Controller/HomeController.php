@@ -6,7 +6,6 @@ namespace App\Controller;
 use App\Form\SearchVehicleType;
 use App\Repository\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -24,7 +23,7 @@ class HomeController extends AbstractController
             $search = $form->getData()['search'];
             $vehicles = $vehicleRepository->findVehicleByFuelType($search);
 
-            return $this->renderForm('vehicle/searchedVehicle.html.twig', [
+            return $this->renderForm('listofcars.html.twig', [
                 'vehicles' => $vehicles,
                 'form' => $form
             ]);
