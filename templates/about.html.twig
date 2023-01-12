@@ -1,0 +1,156 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <div id="fakeloader">
+        <div class="spinner5">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+
+        <div class="rq-page-content">
+            <div class="inner-page-banner" style="background: url('img/inner-banner/about-us.jpg') top center no-repeat; background-size: cover;">
+                <div class="rq-overlay"></div>
+                <div class="container">
+                    <div class="rq-title-container bredcrumb-title">
+                        <h2 class="rq-title">About Us</h2>
+                        <ol class="breadcrumb rq-subtitle">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">About Us</li>
+                        </ol>
+                    </div>
+                </div>
+            </div> <!-- /. inner pagebanner -->
+            <div class="rq-content-block">
+                <div class="rq-about-us-content-wrapper">
+                    <div class="container">
+                        <div class="about-us-content-single">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h2 class="brand-title">The Brand<span class="dot">.</span></h2>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="about-us-text">
+                                        <p><strong>We make it fun and easy for you to find a better, greener option.</strong></p>
+                                        <p>
+                                            We believe in taking care of our planet, strengthening local communities and setting an example for tomorrow.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end of brand -->
+                        <div class="about-us-content-single"> <!-- start of contact info -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h2 class="brand-title">Contact Us<span class="dot">.</span></h2>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="contact-single">
+                                        <i class="icon_pin"></i>
+                                        <p>171 Rue Lucien Faure, 33300 Bordeaux, France</p>
+                                    </div>
+                                    <div class="contact-single">
+                                        <i class="icon_mail_alt"></i>
+                                        <p>hello@contactus.com</p>
+                                    </div>
+                                    <div class="contact-single">
+                                        <i class="icon_phone"></i>
+                                        <p>+33 661714439</p>
+                                    </div>
+                                    <div class="opening-hour">
+                                        <p> HOUR WORK:  <span> MONDAY - FRIDAY  /  09AM - 05:30PM</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end of contact info -->
+                        <div class="about-us-content-single"> <!-- start of our team -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h2 class="brand-title">The Team<span class="dot">.</span></h2>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="rq-team-members">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="member-single"
+                                                     style="background: url('{{ asset('/img/andy.jpg') }}') top center no-repeat; background-size: cover;">
+                                                    <div class="member-info">
+                                                        <a href="#">Andy Ricaña</a>
+                                                        <p>Co-founder</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="member-single"
+                                                     style="background: url('{{ asset('/img/tolo.jpg') }}') top center no-repeat; background-size: cover;">
+                                                    <div class="member-info">
+                                                        <a href="#">Tolotra Ramarovahoaka</a>
+                                                        <p>Co-founder</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="member-single"
+                                                     style="background: url('img/about-us/about-us-our-team-3.jpg') top center no-repeat; background-size: cover;">
+                                                    <div class="member-info">
+                                                        <a href="#">Killian Portier</a>
+                                                        <p>Co-founder</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="member-single"
+                                                     style="background: url('img/about-us/about-us-our-team-4.jpg') top center no-repeat; background-size: cover;">
+                                                    <div class="member-info">
+                                                        <a href="#">Yazid Hamzi</a>
+                                                        <p>Co-founder</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="member-single"
+                                                     style="background: url('img/about-us/about-us-our-team-6.jpg') top center no-repeat; background-size: cover;">
+                                                    <div class="member-info">
+                                                        <a href="#">Pierre Brignoli</a>
+                                                        <p>Co-founder</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="member-single"
+                                                     style="background: url('img/about-us/about-us-our-team-6.jpg') top center no-repeat; background-size: cover;">
+                                                    <div class="member-info">
+                                                        <a href="#">Helene Fourcade</a>
+                                                        <p>Co-founder</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-6">
+                                                <div class="member-single"
+                                                     style="background: url('img/about-us/about-us-our-team-6.jpg') top center no-repeat; background-size: cover;">
+                                                    <div class="member-info">
+                                                        <a href="#">Bixente Lasserre</a>
+                                                        <p>Co-founder</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- end of our team -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- end #main-wrapper -->
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}" ></script>
+
+{% endblock %}

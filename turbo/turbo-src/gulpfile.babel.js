@@ -121,7 +121,7 @@ gulp.task('less-common-task', () => {
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('./assets/dist/turbo/css/turbo.style.css')
+  return gulp.src('./assets/dist/turbo/css/style.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('./assets/dist/turbo/css/'));
 });
