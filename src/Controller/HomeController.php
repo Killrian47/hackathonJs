@@ -124,30 +124,6 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/listofcars', name: 'app_listofcars')]
-    public function listofcarsAll(Request $request, VehicleRepository $vehicleRepository, CompanyRepository $companyRepository): Response
-    {
-        $form = $this->createForm(SearchVehicleType::class);
-        $form->handleRequest($request);
-        $vehicles = $vehicleRepository->findAll();
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $search = $form->getData()['search'];
-            $vehicles = $vehicleRepository->findVehicleByFuelType($search);
-
-            return $this->renderForm('listofcars.html.twig', [
-                'vehicles' => $vehicles,
-                'form' => $form,
-                'companies' => $companyRepository->findAll()
-            ]);
-        }
-        return $this->renderForm('listofcars.html.twig', [
-            'vehicles' => $vehicles,
-            'companies' => $companyRepository->findAll(),
-            'form' => $form
-        ]);
-    }
-
     #[Route('/listofcars/{type}/{sort}', name: 'app_listofcars')]
     public function listOfCars(Request $request, VehicleRepository $vehicleRepository, CompanyRepository $companyRepository, string $type = 'all', string $sort = 'unsorted'): Response
     {
@@ -159,6 +135,15 @@ class HomeController extends AbstractController
                 'vehicles' => $vehicleRepository->findBy([$type => $sort]),
                 'companies' => $companyRepository->findAll(),
                 'form' => $form
+            ]);
+        } elseif ($form->isSubmitted() && $form->isValid()) {
+            $search = $form->getData()['search'];
+            $vehicles = $vehicleRepository->findVehicleByFuelType($search);
+
+            return $this->renderForm('listofcars.html.twig', [
+                'vehicles' => $vehicles,
+                'form' => $form,
+                'companies' => $companyRepository->findAll()
             ]);
         }
         return $this->render('listofcars.html.twig', [
