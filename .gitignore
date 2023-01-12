@@ -30,5 +30,6 @@ yarn-error.log
 ###> IDE ###
 .idea
 DS_Store
+package-lock.jsong
 ###< IDE ###
 
