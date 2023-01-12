@@ -1,67 +1,73 @@
-<div class="rq-search-single">
-    <div class="rq-search-content">
-        <span class="rq-search-heading">Pickup Location</span>
-        <select name="categories" class="category-option">
-            <option value="0">Pick a location</option>
-            <option value="AL">Alabama</option>
-            <option value="AK">Alaska</option>
-            <option value="AZ">Arizona</option>
-            <option value="AR">Arkansas</option>
-            <option value="CA">California</option>
-            <option value="CO">Colorado</option>
-            <option value="CT">Connecticut</option>
-            <option value="DE">Delaware</option>
-            <option value="DC">District of Columbia</option>
-            <option value="FL">Florida</option>
-            <option value="GA">Georgia</option>
-            <option value="HI">Hawaii</option>
-            <option value="ID">Idaho</option>
-            <option value="IL">Illinois</option>
-            <option value="IN">Indiana</option>
-        </select>
-    </div>
-</div>
-<div class="rq-search-single">
-    <div class="rq-search-content">
-        <span class="rq-search-heading">Drop off Location</span>
-        <select name="categories" class="category-option">
-            <option value="0">Pick a location</option>
-            <option value="AL">Alabama</option>
-            <option value="AK">Alaska</option>
-            <option value="AZ">Arizona</option>
-            <option value="AR">Arkansas</option>
-            <option value="CA">California</option>
-            <option value="CO">Colorado</option>
-            <option value="CT">Connecticut</option>
-            <option value="DE">Delaware</option>
-            <option value="DC">District of Columbia</option>
-            <option value="FL">Florida</option>
-            <option value="GA">Georgia</option>
-            <option value="HI">Hawaii</option>
-            <option value="ID">Idaho</option>
-            <option value="IL">Illinois</option>
-            <option value="IN">Indiana</option>
-        </select>
-    </div>
-</div>
-<div class="rq-search-single">
-    <div class="rq-search-content">
-        <span class="rq-search-heading">Pick up</span>
-        <input type="text" name="datefilter" class="rq-form-element datepicker" id="startdate" placeholder="Pick up date"/>
-        <i class="ion-chevron-down datepicker-arrow"></i>
-    </div>
-</div>
-<div class="rq-search-single">
-    <div class="rq-search-content">
-        <span class="rq-search-heading">Return</span>
-        <input type="text" name="datefilter" class="rq-form-element" id="enddate" placeholder="Return date"/>
-        <i class="ion-chevron-down datepicker-arrow"></i>
-    </div>
-</div>
-<div class="rq-search-single search-btn">
-    <div class="rq-search-content">
-        <form class="rq-btn rq-btn-primary fluid-btn action="{{ path('app_carListList') }}">
-        <button class="rq-btn rq-btn-primary fluid-btn" type="submit" value="go_to_carList">Search <i class="arrow_right"></i></button>
-        </form>
-    </div>
+{#<div class="rq-search-single">#}
+{#    <div class="rq-search-content">#}
+{#        <span class="rq-search-heading">Pickup Location</span>#}
+{#        <select name="categories" class="category-option">#}
+{#            <option value="0">Pick a location</option>#}
+{#            <option value="AL">Alabama</option>#}
+{#            <option value="AK">Alaska</option>#}
+{#            <option value="AZ">Arizona</option>#}
+{#            <option value="AR">Arkansas</option>#}
+{#            <option value="CA">California</option>#}
+{#            <option value="CO">Colorado</option>#}
+{#            <option value="CT">Connecticut</option>#}
+{#            <option value="DE">Delaware</option>#}
+{#            <option value="DC">District of Columbia</option>#}
+{#            <option value="FL">Florida</option>#}
+{#            <option value="GA">Georgia</option>#}
+{#            <option value="HI">Hawaii</option>#}
+{#            <option value="ID">Idaho</option>#}
+{#            <option value="IL">Illinois</option>#}
+{#            <option value="IN">Indiana</option>#}
+{#        </select>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="rq-search-single">#}
+{#    <div class="rq-search-content">#}
+{#        <span class="rq-search-heading">Drop off Location</span>#}
+{#        <select name="categories" class="category-option">#}
+{#            <option value="0">Pick a location</option>#}
+{#            <option value="AL">Alabama</option>#}
+{#            <option value="AK">Alaska</option>#}
+{#            <option value="AZ">Arizona</option>#}
+{#            <option value="AR">Arkansas</option>#}
+{#            <option value="CA">California</option>#}
+{#            <option value="CO">Colorado</option>#}
+{#            <option value="CT">Connecticut</option>#}
+{#            <option value="DE">Delaware</option>#}
+{#            <option value="DC">District of Columbia</option>#}
+{#            <option value="FL">Florida</option>#}
+{#            <option value="GA">Georgia</option>#}
+{#            <option value="HI">Hawaii</option>#}
+{#            <option value="ID">Idaho</option>#}
+{#            <option value="IL">Illinois</option>#}
+{#            <option value="IN">Indiana</option>#}
+{#        </select>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="rq-search-single">#}
+{#    <div class="rq-search-content">#}
+{#        <span class="rq-search-heading">Pick up</span>#}
+{#        <input type="text" name="datefilter" class="rq-form-element datepicker" id="startdate" placeholder="Pick up date"/>#}
+{#        <i class="ion-chevron-down datepicker-arrow"></i>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="rq-search-single">#}
+{#    <div class="rq-search-content">#}
+{#        <span class="rq-search-heading">Return</span>#}
+{#        <input type="text" name="datefilter" class="rq-form-element" id="enddate" placeholder="Return date"/>#}
+{#        <i class="ion-chevron-down datepicker-arrow"></i>#}
+{#    </div>#}
+{#</div>#}
+{#<div class="rq-search-single search-btn">#}
+{#    <div class="rq-search-content">#}
+{#        <form class="rq-btn rq-btn-primary fluid-btn action="{{ path('app_carListList') }}">#}
+{#        <button class="rq-btn rq-btn-primary fluid-btn" type="submit" value="go_to_carList">Search <i class="arrow_right"></i></button>#}
+{#        </form>#}
+{#    </div>#}
+{#</div>#}
+<div class="mt-2 contact-form-input">
+    {{ form_start(form) }}
+    {{ form_row(form, { attr : { class : 'contact-form-input'}}) }}
+    <button type="submit" class="my-3 rounded border-0 btn btn-secondary">Submit</button>
+    {{ form_end(form) }}
 </div>
