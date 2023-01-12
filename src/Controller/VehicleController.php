@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
 #[Route('/vehicle')]
 class VehicleController extends AbstractController
@@ -36,24 +37,27 @@ class VehicleController extends AbstractController
         ]);
     }
 
-//    #[Route('/new', name: 'app_vehicle_new', methods: ['GET', 'POST'])]
-//    public function new(Request $request, VehicleRepository $vehicleRepository): Response
-//    {
-//        $vehicle = new Vehicle();
-//        $form = $this->createForm(VehicleType::class, $vehicle);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $vehicleRepository->save($vehicle, true);
-//
-//            return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
-//        }
-//
-//        return $this->renderForm('vehicle/new.html.twig', [
-//            'vehicle' => $vehicle,
-//            'form' => $form,
-//        ]);
-//    }
+
+    #[Route('/new', name: 'app_vehicle_new', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
+    public function new(Request $request, VehicleRepository $vehicleRepository): Response
+    {
+        $vehicle = new Vehicle();
+        $form = $this->createForm(VehicleType::class, $vehicle);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $vehicleRepository->save($vehicle, true);
+
+            return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('vehicle/new.html.twig', [
+            'vehicle' => $vehicle,
+            'form' => $form,
+        ]);
+    }
+
 
     #[Route('/{id}', name: 'app_vehicle_show', methods: ['GET'])]
     public function show(Vehicle $vehicle): Response
@@ -63,31 +67,33 @@ class VehicleController extends AbstractController
         ]);
     }
 
-//    #[Route('/{id}/edit', name: 'app_vehicle_edit', methods: ['GET', 'POST'])]
-//    public function edit(Request $request, Vehicle $vehicle, VehicleRepository $vehicleRepository): Response
-//    {
-//        $form = $this->createForm(VehicleType::class, $vehicle);
-//        $form->handleRequest($request);
-//
-//        if ($form->isSubmitted() && $form->isValid()) {
-//            $vehicleRepository->save($vehicle, true);
-//
-//            return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
-//        }
-//
-//        return $this->renderForm('vehicle/edit.html.twig', [
-//            'vehicle' => $vehicle,
-//            'form' => $form,
-//        ]);
-//    }
+    #[Route('/{id}/edit', name: 'app_vehicle_edit', methods: ['GET', 'POST'])]
+    #[IsGranted('ROLE_ADMIN')]
+    public function edit(Request $request, Vehicle $vehicle, VehicleRepository $vehicleRepository): Response
+    {
+        $form = $this->createForm(VehicleType::class, $vehicle);
+        $form->handleRequest($request);
 
-//    #[Route('/{id}', name: 'app_vehicle_delete', methods: ['POST'])]
-//    public function delete(Request $request, Vehicle $vehicle, VehicleRepository $vehicleRepository): Response
-//    {
-//        if ($this->isCsrfTokenValid('delete'.$vehicle->getId(), $request->request->get('_token'))) {
-//            $vehicleRepository->remove($vehicle, true);
-//        }
-//
-//        return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
-//    }
+        if ($form->isSubmitted() && $form->isValid()) {
+            $vehicleRepository->save($vehicle, true);
+
+            return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
+        }
+
+        return $this->renderForm('vehicle/edit.html.twig', [
+            'vehicle' => $vehicle,
+            'form' => $form,
+        ]);
+    }
+
+    #[Route('/{id}', name: 'app_vehicle_delete', methods: ['POST'])]
+    #[IsGranted('ROLE_ADMIN')]
+    public function delete(Request $request, Vehicle $vehicle, VehicleRepository $vehicleRepository): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$vehicle->getId(), $request->request->get('_token'))) {
+            $vehicleRepository->remove($vehicle, true);
+        }
+
+        return $this->redirectToRoute('app_vehicle_index', [], Response::HTTP_SEE_OTHER);
+    }
 }

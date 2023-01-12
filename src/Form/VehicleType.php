@@ -22,8 +22,8 @@ class VehicleType extends AbstractType
             ->add('year')
             ->add('status')
             ->add('price')
-            ->add('users')
-            ->add('company')
+            //->add('users')
+            //->add('company')
         ;
     }
 
