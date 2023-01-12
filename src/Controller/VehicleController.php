@@ -29,7 +29,9 @@ class VehicleController extends AbstractController
             ]);
         }
         return $this->render('vehicle/index.html.twig', [
-            'vehicles' => $vehicleRepository->findAll(),
+            'vehicles' => $vehicleRepository->findBy([
+                'status' => true
+            ]),
             'form' => $form
         ]);
     }
