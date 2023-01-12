@@ -17,7 +17,13 @@
                 </li>
                 {% if app.user %}
                     <li>
-                        <a href="{{ path('app_logout') }}">Logout</a>
+                        <a href="{{ path('app_logout') }}">Logout</a> <br>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_reservation') }}">My reservations</a> <br>
+                    </li>
+                    <li style ="align-self: end;">
+                        <p>Welcome {{ app.user.fullName }} !</p>
                     </li>
                 {% else %}
                     <li>
