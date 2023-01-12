@@ -3,3 +3,7 @@
     flex-direction: row !important;
     justify-content: flex-end !important;
 }
+
+.homeBanner{
+    height: 10%;
+}
