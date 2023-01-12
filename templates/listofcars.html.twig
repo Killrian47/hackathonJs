@@ -121,7 +121,7 @@
                                                     <li>Agency: <span>{{ vehicle.company.name }}</span></li>
                                                 </ul>
                                                 <div class="listing-footer">
-                                                    <span><a href="#">Details</a></span>
+                                                    <span><a href="{{ path('app_cardetails', {id : vehicle.id}) }}">Details</a></span>
                                                     <span>
                             Starting at <span class="price">{{ vehicle.price }}</span> / day
                           </span>
