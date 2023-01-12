@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Company;
+use App\Repository\CompanyRepository;
 use App\Repository\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -87,11 +89,19 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/listofcars', name: 'app_listofcars')]
-    public function listofcars(VehicleRepository $vehicleRepository): Response
+    #[Route('/listofcars/{type}/{sort}', name: 'app_listofcars')]
+    public function listOfCars(VehicleRepository $vehicleRepository, CompanyRepository $companyRepository, string $type = 'all', string $sort = 'unsorted'): Response
     {
+        if ($type !== 'all' && $sort !== 'unsorted') {
+            return $this->render('listofcars.html.twig', [
+                'vehicles' => $vehicleRepository->findBy([$type => $sort]),
+                'companies' => $companyRepository->findAll(),
+            ]);
+        }
         return $this->render('listofcars.html.twig', [
             'vehicles' => $vehicleRepository->findAll(),
+            'companies' => $companyRepository->findAll()
+
         ]);
     }
 }
