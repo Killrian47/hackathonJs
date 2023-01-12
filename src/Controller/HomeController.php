@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-
+use App\Entity\Company;
+use App\Repository\CompanyRepository;
 use App\Repository\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,7 +17,20 @@ class HomeController extends AbstractController
     public function index(): Response
     {
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+
+        ]);
+    }
+
+    #[Route('/vehicles/{type}/{sort}', name: 'app_vehicles')]
+    public function showVehicles(Request $request, VehicleRepository $vehicleRepository, string $type = 'all', string|int $sort = 'unsorted'): Response
+    {
+        if ($type !== 'all' && $sort !== 'unsorted') {
+            return $this->render('home/index.html.twig', [
+                'vehicles' => $vehicleRepository->findBy([$type => $sort])
+            ]);
+        }
+        return $this->render('home/index.html.twig', [
+            'vehicles' => $vehicleRepository->findAll()
         ]);
     }
 
@@ -83,11 +96,19 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/listofcars', name: 'app_listofcars')]
-    public function listofcars(): Response
+    #[Route('/listofcars/{type}/{sort}', name: 'app_listofcars')]
+    public function listOfCars(VehicleRepository $vehicleRepository, CompanyRepository $companyRepository, string $type = 'all', string $sort = 'unsorted'): Response
     {
+        if ($type !== 'all' && $sort !== 'unsorted') {
+            return $this->render('listofcars.html.twig', [
+                'vehicles' => $vehicleRepository->findBy([$type => $sort]),
+                'companies' => $companyRepository->findAll(),
+            ]);
+        }
         return $this->render('listofcars.html.twig', [
-            'controller_name' => 'HomeController',
+            'vehicles' => $vehicleRepository->findAll(),
+            'companies' => $companyRepository->findAll()
+
         ]);
     }
 
