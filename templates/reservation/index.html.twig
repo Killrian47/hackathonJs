@@ -3,17 +3,17 @@
 {% block title %}Hello ReservationController!{% endblock %}
 
 {% block body %}
-    <table style ="border: 1px solid #cccccc;">
+    <table style ="border: 1px solid #cccccc; margin: auto; padding-bottom: 10em;">
         <tr style ="border: 1px solid #cccccc;">
-            <th style ="border: 1px solid #cccccc;">Reservation Number</th>
-            <th style ="border: 1px solid #cccccc;">Dates of renting</th>
-            <th style ="border: 1px solid #cccccc;">Vehicle used</th>
-            <th style ="border: 1px solid #cccccc;">Number of points won</th>
+            <th style ="border: 1px solid #cccccc; padding-right: 5em;">Reservation Number</th>
+            <th style ="border: 1px solid #cccccc; padding-right: 10em;">Dates of renting</th>
+            <th style ="border: 1px solid #cccccc; padding-right: 10em;">Vehicle used</th>
+            <th style ="border: 1px solid #cccccc; padding-right: 5em;">Number of points</th>
         </tr>
 
         {% for rental in rentals %}
             {% if app.user.id == rental.renter.id %}
-        <tr style ="border: 1px solid #cccccc;" >
+        <tr style ="border: 1px solid #cccccc; padding-bottom: 10em;" >
             <td style ="border: 1px solid #cccccc;" >2665218</td>
             <td style ="border: 1px solid #cccccc;" >From {{ rental.startRental|date('Y-m-d') }} <br>to {{ rental.endRental|date('Y-m-d')}} </td>
             <td style ="border: 1px solid #cccccc;" >Brand : {{ rental.vehicle.vehicleBrand }} <br>
@@ -24,8 +24,9 @@
         {% endif %}
         {% endfor %}
         <a href=" {{ path('app_points_added') }}">
-        <button>Add points</button>
+        <button style="margin-left: 10em; margin-top: 5em;" >Add points</button>
         </a>
 
     </table>
 {% endblock %}
+{#style="margin: auto;"#}
