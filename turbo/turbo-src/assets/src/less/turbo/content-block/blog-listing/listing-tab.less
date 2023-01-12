@@ -1,0 +1,32 @@
+.rq-blog-listing {
+  .nav-tabs {
+    border-bottom: 0;
+    margin-top: 0;
+    .text-center;
+    li {
+      float: none;
+      display: inline-block;
+      border: 0;
+      &.active {
+        a {
+          color: @rq-text-color-dark;
+          border: 0;
+          &:focus {
+            border: 0;
+          }
+        }
+      }
+      a {
+        border: 0;
+        .text-capitalize;
+        color: @rq-text-color-light-dark;
+        font-weight: @rq-font-weight-bold;
+        font-size: @rq-font-size-base + 2;
+        &:hover {
+          background: transparent;
+          color: @rq-text-color-dark;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+.Relative(@height) {
+  position: relative;
+  width: 100%;
+  height: @height;
+}
+
+.absolute-overlay() {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: block;
+  z-index: 9;
+}
+
+.absolute-menu() {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.transition(@time: .3s) {
+  transition: all @time ease;
+}
+
+.no-box-shadow() {
+  box-shadow: none;
+}
+
+.no-border() {
+  border: 0;
+}
+
+.no-padding-margin() {
+  margin: 0;
+  padding: 0;
+}
+
+.search-custom-select-arrow() {
+  font-family: "Ionicons";
+  position: absolute;
+  top: @rq-padding-small - 3;
+  right: @rq-line-height-base;
+  border: 0;
+  color: darken(@rq-bg-light, 30%);
+  font-size: @rq-font-size-base - 2;
+}

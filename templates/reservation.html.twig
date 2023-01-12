@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+    <div id="fakeloader">
+        <div class="spinner5">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+    </div>
+    <div id="main-wrapper">
+
+        <div class="rq-page-content"> <!-- start of page content -->
+            <div class="rq-content-block">
+                <div class="rq-shopping-content-block">
+                    <div class="container">
+                        <div class="rq-title-container bredcrumb-title small"> <!-- start of breadcrumb -->
+                            <h2 class="rq-title">Reservation details</h2>
+                            <ol class="breadcrumb rq-subtitle">
+                                <li><a href="#">Home</a></li>
+                                <li class="active">Reservation</li>
+                            </ol>
+                        </div> <!-- end of breadcrumb -->
+                        <div class="rq-cart-items">
+                            <h4>Car reserved</h4>
+                            <div class="cart-items-table">
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                        <tr class="table-head">
+                                            <th>CAR NAME</th>
+                                            <th>PRICE</th>
+                                            <th>DAYS</th>
+                                            <th>TOTAL</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href=""><img src="img/cart-item.png" alt="item"></a>
+                                                <div class="details">
+                                                    <h5>Mercedes Ben C-Class</h5>
+                                                    <ul class="items">
+                                                        <li>Arrive Date: <span>03/25/2016</span></li>
+                                                        <li>Depature Date: <span>03/29/2016</span> </li>
+                                                        <li>Pickup Location: <span>Sanfrancisco, CA</span></li>
+                                                        <li>Return Location: <span>Mahhata, NY</span></li>
+                                                    </ul>
+                                                </div>
+                                            </td>
+                                            <td>$45.00</td>
+                                            <td>5 Days</td>
+                                            <td>$227.50</td>
+                                            <td>
+                                                <div class="close-edit-btn">
+                                                    <a href="#"><i class="icon_close"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rq-billing-info">
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="rq-grand-total">
+                                        <div class="rq-cart-options-title">
+                                            <h5>Sub total <span>$120.10</span></h5>
+                                            <h4>Grand total<span>$227.05</span></h4>
+                                        </div>
+                                        <div class="rq-cart-options-content">
+                                            <button type="button" class="rq-btn rq-btn-primary btn-large fluid">proceed to checkout</button>
+                                            <p><a href="#">Checkout with multiple address</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.page-content -->
+    </div> <!-- end #main-wrapper -->
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}" ></script>
+
+{% endblock %}

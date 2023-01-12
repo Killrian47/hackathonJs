@@ -1,0 +1,41 @@
+/* now its working */
+
+input[type="text"] {
+  &.rq-form-element {
+    position: relative;
+    width: 100%;
+    outline: 0;
+    font-family: @rq-font-family-primary;
+    font-size: @rq-font-size-base;
+    &:focus {
+      outline: 0;
+    }
+  }
+  &.fq-newsletter-form {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid lighten(#302f2f , 10%);
+    width: 100%;
+    padding: @rq-padding-small @rq-padding-base * 2 @rq-padding-small 0;
+  }
+}
+
+.fq-newsletter-form {
+  font-family: @rq-font-family-primary;
+  &::-webkit-input-placeholder {
+    color: @rq-bg-body;
+  }
+
+  &:-moz-placeholder { /* Firefox 18- */
+    color: @rq-bg-body;
+  }
+
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: @rq-bg-body;
+  }
+
+  &:-ms-input-placeholder {
+    color: @rq-bg-body;
+  }
+}

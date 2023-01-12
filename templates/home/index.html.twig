@@ -3,43 +3,267 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-    {% include 'home/header.html.twig' %}
-
-    <div class="h-pres-container w-50 mx-auto my-5">
-        <h2 class="text-center">Welcome on Be Green</h2>
-        <h6 class="w-75 mx-auto text-center my-3">Looking to rent a car for an upcoming vacation or business trip? In
-            TURBO, we make renting a car seamless so you can get right on your way.</h6>
-    </div>
-
-    <div class="h-search-bar-container mt-3">
-        <div class="bg-black w-75 h-100 mx-auto">
-
+    <div id="fakeloader">
+        <div class="spinner5">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
         </div>
     </div>
+    <div id="main-wrapper" class="index-two">
+        <header class="header index-two-header">
+            <div class="header-body" style="background: url('./img/turbo-banner-two.jpg') top center no-repeat; background-size: 100% 65%;">
+                <div class="container">
+                    <h1>Welcome <strong>Be GREEN Be CLEAN</strong></h1>
+                    <h2 class="rq-title no-padding">Looking to rent a car for an upcoming vacation or business trip? In Be GREEN Be CLEAN, we make renting
+                        a car seamless so you can get right on your way. </h2>
+                    <div class="group-car-image">
+                        <img src="img/banner-group-car.png" alt="">
+                    </div>
+                    <div class="">
+                        <div class="rq-search-container">
+                            {% include '/_includes/_searchbar.html.twig' %}
+                        </div> <!-- / .search-container -->
+                    </div>
+                </div>
+            </div> <!-- /.header-body -->
 
-    {% include 'home/carousel.html.twig' %}
+        </header> <!-- end header -->
 
-    <h2 class="text-center mb-3">How it Work</h2>
-    <div class="d-flex justify-content-around w-50 mx-auto h-how-it-work ">
-        <div>
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="rq-page-content">
+            <div class="rq-content-block" id="cars">
+                <div class="rq-title-container text-center">
+                    <h2 class="rq-title no-padding">Most Popular <strong>Cars.</strong></h2>
+                </div>
+                <div class="rq-secondary-slider">
+                    <div class="owl-loop owl-carousel">
+                        <div class="item">
+                            <div class="car-details-bg">
+                                <span>$39/Days</span>
+                                <div class="owl-title-area">
+                                    <h4><a href="#">2016 BMW 2 Series 228i</a></h4>
+                                    <span class="rating">
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                                </div>
+                            </div>
+                            <img src="img/tab-image/full-img1.png" data-img-src="" alt="">
+                            <h5><a href="#">2016 BMW 2 Series 228i</a></h5>
+                        </div>
+                        <div class="item">
+                            <div class="car-details-bg">
+                                <span>$39/Days</span>
+                                <div class="owl-title-area">
+                                    <h4><a href="#">2016 BMW 2 Series 228i</a></h4>
+                                    <span class="rating">
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                                </div>
+                            </div>
+                            <img src="img/tab-image/full-img2.png" data-img-src="" alt="">
+                            <h5><a href="#">2016 BMW 2 Series 228i</a></h5>
+                        </div>
+                        <div class="item">
+                            <div class="car-details-bg">
+                                <span>$39/Days</span>
+                                <div class="owl-title-area">
+                                    <h4><a href="#">2016 BMW 2 Series 228i</a></h4>
+                                    <span class="rating">
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                                </div>
+                            </div>
+                            <img src="img/tab-image/full-img3.png" data-img-src="" alt="">
+                            <h5><a href="#">2016 BMW 2 Series 228i</a></h5>
+                        </div>
+                        <div class="item">
+                            <div class="car-details-bg">
+                                <span>$39/Days</span>
+                                <div class="owl-title-area">
+                                    <h4><a href="#">2016 BMW 2 Series 228i</a></h4>
+                                    <span class="rating">
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                                </div>
+                            </div>
+                            <img src="img/tab-image/full-img4.png" data-img-src="" alt="">
+                            <h5><a href="#">2016 BMW 2 Series 228i</a></h5>
+                        </div>
+                        <div class="item">
+                            <div class="car-details-bg">
+                                <span>$39/Days</span>
+                                <div class="owl-title-area">
+                                    <h4><a href="#">Audi Sport Red 1989</a></h4>
+                                    <span class="rating">
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                                </div>
+                            </div>
+                            <img src="img/tab-image/full-img5.png" data-img-src="" alt="">
+                            <h5><a href="#">Audi Sport Red 1989</a></h5>
+                        </div>
+                    </div>
+                    <div class="browse-cars">
+                        <a href="#">Browse all cars</a>
+                    </div>
+
                 </div>
             </div>
-        </div>
-        <div>
-            <div class="card" style="width: 18rem;">
-                <img src="" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="rq-content-block gray-bg" id="services">
+                <div class="rq-title-container text-center">
+                    <h2 class="rq-title no-padding">How it <strong>Work.</strong></h2>
+                </div>
+                <div class="rq-how-it-work-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="how-it-work-single">
+                                    <img src="img/icon1.png" alt="">
+                                    <h4>Select Time<br> Pick Up & Return</h4>
+                                    <p>Select location, time to pick up, return and car type</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="how-it-work-single">
+                                    <img src="img/icon2.png" alt="">
+                                    <h4>find all<br>cars near you</h4>
+                                    <p>Scholar will help you find all hotel near your area</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="how-it-work-single">
+                                    <img src="img/icon3.png" alt="">
+                                    <h4>pick a car<br>and enjoy your trip</h4>
+                                    <p>Pick a car that you want<br>and enjoy your trip</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- /.rq-content-block -->
+            <div class="rq-testimonial-section">
+                <div class="rq-testimonial-content">
+                    <h1 class="rq-title">What Client Say<span class="rq-dot">.</span></h1>
+                    <div class=" owl-carousel testimonial-wrapper">
+                        <div class="item">
+                            <p class="testimoinal-text">
+                                The absolute best car rental service I have ever had! From the moment of checking online for information to the moment of leaving the shuttle at the airport! Thank you!
+                            </p>
+                            <span class="author-name-title">
+                  <img src="{{ asset('/img/jean.jpg') }}" alt="">
+                  <a href="#">Jean Le Grand <i class="ion-ios-minus-empty"></i>
+                    <span>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                  </a>
+                </span>
+
+                        </div>
+                        <div class="item">
+                            <p class="testimoinal-text">
+                                The rental process was extremely quick and easy. The staff was exceptional!
+                            </p>
+                            <span class="author-name-title">
+                  <img src="{{ asset('/img/david.png') }}" alt="">
+                  <a href="#">David Faure <i class="ion-ios-minus-empty"></i>
+                    <span>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                  </a>
+                </span>
+
+                        </div>
+                        <div class="item">
+                            <p class="testimoinal-text">
+                                Was hands down THE BEST rental car experience I've ever had. From the quickness and ease of checking in and out the door. To the absolute best prices around. Had exactly the car we requested. Car was great. Return was just as easy. Great great great.
+                            </p>
+                            <span class="author-name-title">
+                  <img src="{{ asset('/img/Clothilde.jpg') }}" alt="">
+                  <a href="#">Clothilde Vancolbert
+                      <i class="ion-ios-minus-empty"></i>
+                    <span>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                  </a>
+                </span>
+
+                        </div>
+                        <div class="item">
+                            <p class="testimoinal-text">
+                                Great staff & went beyond to get my car and on my way, didn't have my car ready so gave me a option of a short wait or free upgrade and the shuttle drivers were very nice to wife & me, I will only book with you now but you need to be in more citys!
+                            </p>
+
+                            <span class="author-name-title">
+                  <img src="{{ asset('/img/camille.png') }}" alt="">
+                  <a href="#">Camille Sabatie <i class="ion-ios-minus-empty"></i>
+                    <span>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                      <i class="ion-android-star"></i>
+                    </span>
+                  </a>
+                </span>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- /.testimonial section -->
+
+            <div class="rq-content-block gray-bg">
+                <div class="newsletter-content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h2>Our <strong>Newsletter.</strong></h2>
+                            </div>
+                            <div class="col-md-8">
+                                <form class="rq-newsletter-form" action="#">
+                                    <input class="" type="email" placeholder="youremail@domain.com">
+                                    <button type="submit" class="rq-btn rq-btn-primary">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div> <!-- /.page-content -->
+    </div> <!-- end #main-wrapper -->
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}" ></script>
+
 {% endblock %}

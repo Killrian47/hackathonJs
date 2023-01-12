@@ -1,0 +1,90 @@
+.rq-car-listing-wrapper {
+  position: relative;
+  padding: @rq-padding-large 0;
+  .rq-listing-grid {
+    position: relative;
+  }
+}
+
+.listing-single {
+  position: relative;
+  margin-bottom: @rq-margin-base * 2;
+  .transition(.3s);
+  &:hover {
+    box-shadow: 0px 2px 39px rgba(0,0,0, .2);
+    .car-name {
+      a {
+        color: @rq-primary-color;
+      }
+    }
+  }
+  .listing-img {
+    width: 100%;
+    position: relative;
+    display: block;
+  }
+  .listing-details {
+    position: relative;
+    padding: @rq-padding-large @rq-padding-large;
+    border: 1px solid @rq-date-color;
+    border-top: 0;
+    background-color: @rq-bg-body;
+    .text-center;
+    .rating-list {
+      display: none;
+    }
+    h5 {
+      margin: 0;
+    }
+    h3 {
+      font-family: @rq-font-family-primary;
+      font-weight: @rq-font-weight-bolder;
+      a {
+        font-family: @rq-font-family-primary;
+        color: @rq-text-color-dark;
+      }
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
+    }
+    ul {
+      .no-padding-margin();
+      list-style: none;
+      li {
+        color: @rq-text-color-light-dark;
+        font-size: @rq-font-size-base - 2;
+        font-weight: @rq-font-weight-bolder;
+        margin: 2px 0;
+        span {
+          color: @rq-text-color-dark;
+          font-weight: @rq-font-weight-bold;
+        }
+      }
+    }
+    .listing-footer {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding-top: @rq-padding-large;
+      margin-top: @rq-margin-large;
+      border-top: 1px solid @rq-date-color;
+      span {
+        color: @rq-text-color-light-dark;
+        font-weight: @rq-font-weight-bold;
+        .price {
+          color: @rq-price-color;
+          font-weight: @rq-font-weight-bolder;
+        }
+        a {
+          color: @rq-text-color-dark-secondary;
+          border-bottom: 1px solid @rq-date-color;
+          font-weight: @rq-font-weight-bold;
+          &:hover {
+            border-color: @rq-primary-color;
+          }
+        }
+      }
+    }
+  }
+}

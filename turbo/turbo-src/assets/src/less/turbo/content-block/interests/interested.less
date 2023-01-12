@@ -1,0 +1,27 @@
+.rq-interested-category {
+  .Relative(auto);
+}
+
+.rq-category-single {
+  .Relative(270px);
+  .text-center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: @rq-margin-base * 2;
+  padding: @rq-padding-base + 5;
+  .rq-overlay {
+    .transition(.3s);
+    .absolute-overlay();
+    background-color: rgba(0,0,0, .4);
+    :hover& {
+      background-color: rgba(0,0,0, .6);
+    }
+  }
+  span {
+    .text-uppercase;
+    color: @rq-bg-body;
+    z-index: 20;
+    font-size: @rq-font-size-base + 4;
+  }
+}

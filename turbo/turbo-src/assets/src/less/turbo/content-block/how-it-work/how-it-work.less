@@ -1,0 +1,29 @@
+.rq-how-it-work-content {
+  position: relative;
+}
+.how-it-work-single {
+  position: relative;
+  padding: @rq-padding-small * 8 @rq-padding-base * 4;
+  background: @rq-bg-body;
+  .text-center;
+  margin-bottom: @rq-margin-large;
+  .border-radius(4px);
+  @media(max-width: @screen-lg) {
+    padding: @rq-padding-small * 8 @rq-padding-small * 4;
+  }
+  img {
+    height: 120px;
+    width: auto;
+    margin: 0 auto @rq-margin-large;
+  }
+  h4 {
+    .text-uppercase;
+    margin-bottom: @rq-margin-small;
+    font-weight: @rq-font-weight-bold;
+  }
+  p {
+    font-size: @rq-font-size-base - 1;
+    color: @rq-text-color-light-dark;
+    margin: 0;
+  }
+}
