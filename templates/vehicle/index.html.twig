@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicle index{% endblock %}
+
+{% block body %}
+    <h1>Vehicle index</h1>
+
+    {{ form_start(form) }}
+    {{ form_row(form, {attr : { class : 'rounded' }}) }}
+    <button type="submit">Submit</button>
+    {{ form_end(form) }}
+    <table class="table w-75 mx-auto bg-white rounded">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>VehicleBrand</th>
+                <th>VehicleModel</th>
+                <th>VehicleType</th>
+                <th>VehicleGearBoxType</th>
+                <th>VehicleSeatCount</th>
+                <th>VehicleDoorCount</th>
+                <th>VehicleFuelType</th>
+                <th>Year</th>
+                <th>Status</th>
+                <th>Price</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vehicle in vehicles %}
+            <tr>
+                <td>{{ vehicle.id }}</td>
+                <td>{{ vehicle.vehicleBrand }}</td>
+                <td>{{ vehicle.vehicleModel }}</td>
+                <td>{{ vehicle.vehicleType }}</td>
+                <td>{{ vehicle.vehicleGearBoxType }}</td>
+                <td>{{ vehicle.vehicleSeatCount }}</td>
+                <td>{{ vehicle.vehicleDoorCount }}</td>
+                <td>{{ vehicle.vehicleFuelType }}</td>
+                <td>{{ vehicle.year }}</td>
+                <td>{{ vehicle.status ? 'Yes' : 'No' }}</td>
+                <td>{{ vehicle.price }}</td>
+                <td>
+                    <a href="{{ path('app_vehicle_show', {'id': vehicle.id}) }}">Show</a>
+
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">Edit</a>
+                    {%endif%}
+
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a href="{{ path('app_vehicle_delete', {'id': vehicle.id}) }}">Delete</a>
+                    {%endif%}
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if is_granted("ROLE_ADMIN") %}
+        <a href="{{ path('app_vehicle_new') }}">Create new</a>
+    {%endif%}
+
+
+{% endblock %}

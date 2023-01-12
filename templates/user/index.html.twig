@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+{% block body %}
+    {{ dump(rental) }}
+    {% if rental %}
+        {% for rent in rental %}
+            {{ rent.vehicle.vehicleBrand }}
+            {% if currentDate > rent.endRental|date('Y-m-d') %}
+                Rent finish
+            {% else %}
+                On going
+            {% endif %}
+
+            <form action="{{ path('app_delete_rent', { id : rent.id}) }}" method="post">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ rent.id) }}">
+                <button class="btn btn-danger">Delete</button>
+            </form>
+
+        {% endfor %}
+    {% else %}
+        You have no rent
+    {% endif %}
+
+
+{% endblock %}
