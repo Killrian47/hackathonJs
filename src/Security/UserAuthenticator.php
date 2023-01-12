@@ -16,11 +16,11 @@ use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 
 class
-0UserAuthenticator extends AbstractLoginFormAuthenticator
+UserAuthenticator extends AbstractLoginFormAuthenticator
 {
     use TargetPathTrait;
 
-    public const LOGIN_ROUTE = 'app_login';
+    public const LOGIN_ROUTE = 'app_loginpage';
 
     public function __construct(private UrlGeneratorInterface $urlGenerator)
     {
