@@ -29,7 +29,7 @@ class Company
 
     #[ORM\OneToMany(mappedBy: 'company', targetEntity: User::class)]
     private Collection $users;
-
+    
     public function __construct()
     {
         $this->vehicles = new ArrayCollection();
