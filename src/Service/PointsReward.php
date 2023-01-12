@@ -11,42 +11,28 @@ use App\Repository\VehicleRepository;
 
 class PointsReward
 {
-    public function getPointsReward(UserRepository $userRepository, VehicleRepository $vehicleRepository, RentalRepository $rentalRepository): void
+    public function getPointsReward(RentalRepository $rentalRepository, UserRepository $userRepository): void
     {
+        $rentals = $rentalRepository->findAll();
 
-// Créer un champ "rental_end" bool, if true incrémenter points?
+        foreach ($rentals as $rental) {
+            $rentedVehicle = $rental->getVehicle();
+            $renter = $rental->getRenter();
 
-        $rental = new Rental();
-        $vehicle = new Vehicle();
-        $user = new User();
-        var_dump($user->getRentals());
+            $endRentingDate = $rental->getEndRental();
+            $startRentingDate = $rental->getStartRental();
+            $today = new \DateTime('now');
+            $endRentingDateTS = $endRentingDate->getTimestamp();
+            $startRentingDateTS = $startRentingDate->getTimestamp();
+            $difference = $endRentingDateTS - $startRentingDateTS;
+            $hours = floor($difference / (60 * 60));
 
-//        $rentals = $rentalRepository->findAll();
-//        foreach ($rentals as $rental) {
-//            $users = $rental->getRenter();
-//        $vehicles = $rental->getVehicle();
-//        var_dump($vehicles->getVehicleFuelType());
-//            foreach ($vehicles as $key => $value) {
-//            var_dump($key);
-//        }
-
-//        }
-
-//        $us = $userRepository->find('rentals');
-//        $vehic = $vehicleRepository->findBy(['id' => $rent]);
-
-//        $vehicleFuelType = 'electric';
-
-//        if ($rental->getRenter() === $user->getId() && $vehicle->getId() === $rental->getVehicle()){
-//            if ($vehicle->getVehicleFuelType() === 'electric') {
-//                $user->setPoints($user->getPoints() + 10);
-//            }
-//            if ($vehicle->getVehicleFuelType() === 'hybrid') {
-//                $user->setPoints($user->getPoints() + 5);
-//            }
-//            $userRepository->save($user, true);
-
-
+            if ($rentedVehicle->getVehicleFuelType() === 'electric' && $today->format('Y-m-d') === $endRentingDate->format('Y-m-d') ) {
+                $renter->setPoints($renter->getPoints() + 10 * $hours);
+            }if ($rentedVehicle->getVehicleFuelType() === 'hybrid' && $today->format('Y-m-d') === $endRentingDate->format('Y-m-d')) {
+                $renter->setPoints($renter->getPoints() + 5 * $hours );
+            }
+            $userRepository->save($renter, true);
         }
-
+    }
 }
