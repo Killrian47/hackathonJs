@@ -9,6 +9,7 @@ use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class HomeController extends AbstractController
 {
@@ -36,11 +37,17 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/login', name: 'app_login')]
-    public function login(): Response
+    #[Route('/loginpage', name: 'app_loginpage')]
+    public function loginpage(AuthenticationUtils $authenticationUtils): Response
     {
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
         return $this->render('login.html.twig', [
             'controller_name' => 'HomeController',
+            'last_username' => $lastUsername, 'error' => $error
         ]);
     }
 
@@ -80,6 +87,14 @@ class HomeController extends AbstractController
     public function listofcars(): Response
     {
         return $this->render('listofcars.html.twig', [
+            'controller_name' => 'HomeController',
+        ]);
+    }
+
+    #[Route('/cardetails', name: 'app_cardetails')]
+    public function cardetails(): Response
+    {
+        return $this->render('car-details.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }
