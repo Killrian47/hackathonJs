@@ -4,26 +4,15 @@ namespace App\Controller;
 
 use App\Repository\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Form\Extension\Core\Type\SearchType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\HttpFoundation\Request;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
     public function index(): Response
     {
-        //handle ajax request
-//        if ($request->isXmlHttpRequest()) {
-//            return new JsonResponse([
-//                'content' => $this->renderView('_includes/_vehicles_cards.html.twig', [
-//                    'vehicles' => $vehicleRepository->findAll(),
-//                ])
-//            ]);
-//        }
-
         return $this->render('home/index.html.twig', [
 
         ]);
@@ -99,10 +88,10 @@ class HomeController extends AbstractController
     }
 
     #[Route('/listofcars', name: 'app_listofcars')]
-    public function listofcars(): Response
+    public function listofcars(VehicleRepository $vehicleRepository): Response
     {
         return $this->render('listofcars.html.twig', [
-            'controller_name' => 'HomeController',
+            'vehicles' => $vehicleRepository->findAll(),
         ]);
     }
 }
