@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ReservationController!{% endblock %}
+
+{% block body %}
+    <table style ="border: 1px solid #cccccc;">
+        <tr style ="border: 1px solid #cccccc;">
+            <th style ="border: 1px solid #cccccc;">Reservation Number</th>
+            <th style ="border: 1px solid #cccccc;">Dates of renting</th>
+            <th style ="border: 1px solid #cccccc;">Vehicle used</th>
+            <th style ="border: 1px solid #cccccc;">Number of points won</th>
+        </tr>
+
+        {% for rental in rentals %}
+            {% if app.user.id == rental.renter.id %}
+        <tr style ="border: 1px solid #cccccc;" >
+            <td style ="border: 1px solid #cccccc;" >2665218</td>
+            <td style ="border: 1px solid #cccccc;" >From {{ rental.startRental|date('Y-m-d') }} <br>to {{ rental.endRental|date('Y-m-d')}} </td>
+            <td style ="border: 1px solid #cccccc;" >Brand : {{ rental.vehicle.vehicleBrand }} <br>
+                                                     Model : {{ rental.vehicle.vehicleModel }} <br>
+                                                     Fuel : {{ rental.vehicle.vehicleFuelType }} <br></td>
+            <td style ="border: 1px solid #cccccc;" > {{ rental.renter.points}} </td>
+        </tr>
+        {% endif %}
+        {% endfor %}
+        <a href=" {{ path('app_points_added') }}">
+        <button>Add points</button>
+        </a>
+
+    </table>
+{% endblock %}
