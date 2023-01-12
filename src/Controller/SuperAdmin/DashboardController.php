@@ -18,11 +18,14 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         $adminUrlGenerator = $this->container->get(AdminUrlGenerator::class);
-        return $this->redirect($adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
 
+        if ($this->isGranted('ROLE_ADMIN')) {
+            return $this->redirect($adminUrlGenerator->setController(VehicleCrudController::class)->generateUrl());
+        }
+        if ($this->isGranted('ROLE_SUPER_ADMIN')) {
+            return $this->redirect($adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
+        }
         return parent::index();
-
-
     }
 
     public function configureDashboard(): Dashboard
@@ -38,8 +41,10 @@ class DashboardController extends AbstractDashboardController
             ->setPermission('ROLE_SUPER_ADMIN');
         yield MenuItem::linkToCrud('Companies', 'fa fa-square-parking', Company::class)
             ->setPermission('ROLE_SUPER_ADMIN');
-        yield MenuItem::linkToCrud('Vehicles', 'fa fa-square-parking', Vehicle::class);
+        yield MenuItem::linkToCrud('Vehicles', 'fa fa-car', Vehicle::class);
 
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
+
+
     }
 }
