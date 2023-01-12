@@ -1,0 +1,102 @@
+.rq-mission-block {
+  .Relative(auto);
+  box-shadow: 0 24px 34px -14px rgba(0,0,0, .3);
+  background: @rq-bg-body;
+  .mission-content {
+    position: relative;
+    padding: @rq-padding-base * 4 + 5 0;
+    .rq-title {
+      position: relative;
+      padding-bottom: @rq-padding-base * 3;
+      margin-bottom: 0;
+      .rq-line {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 150px;
+        display: block;
+        height: 1px;
+        background: @rq-text-color-dark;
+      }
+    }
+    .mission-text {
+      margin: 0;
+      padding: @rq-padding-base * 4 0 @rq-padding-base * 4 @rq-padding-large * 2 + 5;
+      @media(max-width: @screen-sm) {
+        padding: @rq-padding-base * 2;
+      }
+    }
+    address {
+      font-style: normal;
+      padding-left: @rq-padding-large * 2 + 5;
+      @media(max-width: @screen-sm) {
+        padding: 0 @rq-padding-base * 2;
+      }
+      a {
+        color: @rq-text-color-dark;
+        font-weight: @rq-font-weight-bold + 100;
+        &:hover {
+          color: @rq-primary-color;
+        }
+      }
+      cite {
+        font-style: normal;
+      }
+    }
+
+  }
+  .mission-image {
+    position: relative;
+    height: 443px;
+    margin: @rq-padding-base * 2;
+    background: @rq-primary-color;
+    @media (max-width: 991px) {
+      overflow: hidden;
+    }
+    @media(max-width: @screen-sm) {
+      display: none;
+    }
+    img {
+      position: absolute;
+      top: 136px;
+      width: 536px;
+      left: 0;
+      @media (max-width: 991px) {
+        width: 100%;
+        bottom: 50px;
+      }
+    }
+  }
+}
+.rq-browse-section {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: @rq-padding-base * 4;
+  @media (max-width: @screen-sm) {
+    flex-direction: column;
+  }
+  h1 {
+    line-height: @rq-font-size-h1;
+    @media(max-width: @screen-sm) {
+      display: none;
+    }
+  }
+  a {
+    color: @rq-text-color-dark;
+    font-weight: @rq-font-weight-bold;
+    @media (max-width: @screen-sm) {
+      text-align: center;
+      width: 100%;
+      margin-top: @rq-margin-base * 2;
+    }
+    i {
+      padding-left: 5px;
+    }
+    &:hover {
+      color: @rq-primary-color;
+    }
+  }
+}

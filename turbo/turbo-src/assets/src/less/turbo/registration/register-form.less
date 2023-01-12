@@ -1,0 +1,75 @@
+.rq-form-control {
+  position: relative;
+  width: 100%;
+  border: 1px solid @rq-date-color;
+  background: @rq-bg-body;
+  outline: 0;
+  padding: @rq-padding-base @rq-padding-large - 5;
+  &.small {
+    padding: @rq-padding-small @rq-padding-large - 5;
+  }
+  .transition(.3s);
+  color: @rq-text-color-dark;
+  margin-bottom: @rq-margin-base * 2;
+  &:focus,
+  &:active {
+    border-color: @rq-text-color-dark;
+  }
+  &.reverse {
+    background: @rq-bg-light;
+    border-color: @rq-bg-light;
+    &:focus,
+    &:active {
+      background: @rq-bg-body;
+      border-color: @rq-date-color;
+    }
+  }
+}
+
+
+.rq-checkbox {
+  position: relative;
+  input[type="checkbox"] {
+    display: none;
+  }
+  label {
+    padding-left: @rq-padding-large;
+    font-weight: normal;
+    color: @rq-text-color-light-darker;
+    &:before {
+      content: "\56";
+      font-family: 'ElegantIcons';
+      position: absolute;
+      left: 0;
+      font-size: @rq-font-size-base + 3;
+    }
+  }
+  input[type="checkbox"]:checked + label:before {
+    content: "\5a";
+    color: @rq-primary-color;
+  }
+}
+
+.rq-radiobox {
+  position: relative;
+  display: block;
+  input[type="radio"] {
+    display: none;
+  }
+  label {
+    padding-left: @rq-padding-large;
+    font-weight: normal;
+    color: @rq-text-color-light-darker;
+    &:before {
+      content: "\5b";
+      font-family: 'ElegantIcons';
+      position: absolute;
+      left: 0;
+      font-size: @rq-font-size-base + 3;
+    }
+  }
+  input[type="radio"]:checked + label:before {
+    content: "\5c";
+    color: @rq-primary-color;
+  }
+}

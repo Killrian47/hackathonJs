@@ -1,0 +1,24 @@
+.rq-feature-list {
+  position: relative;
+  margin: @rq-margin-large 0;
+  padding: 0;
+  list-style: none;
+  li {
+    position: relative;
+    display: inline-block;
+    width: 49%;
+    padding: @rq-padding-small - 6 @rq-padding-base * 2 + 5;
+    &:before {
+      content: "\f375";
+      font-family: "Ionicons";
+      position: absolute;
+      left: 0;
+      top: 2px;
+      font-size: @rq-font-size-base + 4;
+      color: @rq-feature-list-color;
+    }
+    @media (max-width: @screen-md) {
+      width: 100%;
+    }
+  }
+}

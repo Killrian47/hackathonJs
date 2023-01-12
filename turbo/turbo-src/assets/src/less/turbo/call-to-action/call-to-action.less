@@ -1,0 +1,32 @@
+.rq-call-to-action {
+  .Relative(auto);
+  padding: (@rq-padding-base * 5) - 5 0;
+  background: @rq-primary-color;
+  @media(max-width: @screen-xs) {
+
+    padding: @rq-padding-base * 3 0;
+  }
+  .text-center;
+  h2 {
+    .no-padding-margin();
+    color: @rq-text-color-white;
+    font-weight: @rq-font-weight-light;
+    span {
+      font-weight: @rq-font-weight-base;
+      padding-left: @rq-padding-small - 5;
+    }
+    @media( max-width: @screen-md) {
+      line-height: @rq-font-size-h1;
+      font-size: @rq-font-size-h3;
+    }
+    @media( max-width: @screen-sm) {
+      font-size: @rq-font-size-base + 4;
+    }
+    @media(max-width: @screen-xs) {
+
+      font-size: @rq-font-size-base;
+      line-height: @rq-line-height-base;
+    }
+
+  }
+}
