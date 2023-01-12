@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Login page{% endblock %}
 
 {% block body %}
 
@@ -28,14 +28,28 @@
                         <h4>Login your account</h4>
                         <p class="subtitle">Login to your accounts to discover the great features in this template</p>
                         <div class="rq-login-form">
-                            <form action="#">
+                            <form method="post">
+                                {% if error %}
+                                                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                                                {% endif %}
+
+                                                                {% if app.user %}
+                                                                    <div class="mb-3">
+                                                                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+                                                                    </div>
+                                                                {% endif %}
                                 <div class="row">
                                     <div class="col-md-5">
-                                        <input type="email" class="rq-form-control" placeholder="Your email">
+                                        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="rq-form-control" placeholder="Your email" autocomplete="email" required autofocus>
                                     </div>
                                     <div class="col-md-5">
-                                        <input type="password" class="rq-form-control"  placeholder="Your password">
+                                        <input type="password" name="password" id="inputPassword" class="rq-form-control"  placeholder="Your password" autocomplete="current-password" required>
                                     </div>
+
+                                    <input type="hidden" name="_csrf_token"
+                                           value="{{ csrf_token('authenticate') }}"
+                                    >
+
                                     <div class="col-md-2">
                                         <button type="submit" class="rq-btn rq-btn-primary fluid border-radius">Login <i class="arrow_right"></i></button>
                                     </div>
@@ -45,17 +59,55 @@
                                     </div>
                                     <div class="col-md-12">
                                         <div class="remember-me">
-                        <span class="rq-checkbox">
-                          <input type="checkbox" id="remember-me">
-                          <label for="remember-me">Keep me loged in</label>
-                        </span>
+                                            <span class="rq-checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="_remember_me" id="remember-me"> Remember me
+                                                </label>
+                                            </span>
                                             <span class="forgotpass">
-                          <a href="#">Forgot your password ?</a>
-                        </span>
+                                              <a href="#">Forgot your password ?</a>
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+
+{#                            <form method="post">#}
+{#                                {% if error %}#}
+{#                                    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>#}
+{#                                {% endif %}#}
+
+{#                                {% if app.user %}#}
+{#                                    <div class="mb-3">#}
+{#                                        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>#}
+{#                                    </div>#}
+{#                                {% endif %}#}
+
+{#                                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>#}
+{#                                <label for="inputEmail">Email</label>#}
+{#                                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>#}
+{#                                <label for="inputPassword">Password</label>#}
+{#                                <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>#}
+
+{#                                <input type="hidden" name="_csrf_token"#}
+{#                                       value="{{ csrf_token('authenticate') }}"#}
+{#                                >#}
+
+{#                                #}{##}
+{#                                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
+{#                                See https://symfony.com/doc/current/security/remember_me.html#}
+
+{#                                <div class="checkbox mb-3">#}
+{#                                    <label>#}
+{#                                        <input type="checkbox" name="_remember_me"> Remember me#}
+{#                                    </label>#}
+{#                                </div>#}
+{#                                #}
+
+{#                                <button class="btn btn-lg btn-primary" type="submit">#}
+{#                                    Sign in#}
+{#                                </button>#}
+{#                            </form>#}
 
                         </div> <!-- end login div -->
                     </div>
@@ -64,16 +116,6 @@
                     <div class="container">
                         <div class="rq-login-form no-border">
                             <h4>Don't have an account! Register now </h4>
-                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                            <h5>Sign Up TODAY AND YOU ` LL BE ABLE TO FOLLOWING</h5>
-                            <ul class="rq-feature-list">
-                                <li>Register and access all</li>
-                                <li>Change your profile anytime</li>
-                                <li>Keep a records of all your payment</li>
-                                <li>Create your own Add at protfolio</li>
-                                <li>Track your payment easily at your profile page</li>
-                                <li>Quick registration for facebook, twitter and with Google+</li>
-                            </ul>
                             <form class="form-horizontal"  action="#" method="post" >
                                 <div class="row">
                                     <div class="col-md-4">
@@ -108,6 +150,7 @@
             </div>
         </div>
     </div> <!-- end #main-wrapper -->
+
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}" ></script>
 

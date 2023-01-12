@@ -27,6 +27,7 @@ class Company
     #[ORM\OneToMany(mappedBy: 'company', targetEntity: Vehicle::class)]
     private Collection $vehicles;
 
+
     #[ORM\OneToMany(mappedBy: 'company', targetEntity: User::class)]
     private Collection $users;
     
@@ -106,6 +107,7 @@ class Company
 
         return $this;
     }
+
 
     /**
      * @return Collection<int, User>
