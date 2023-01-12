@@ -25,7 +25,9 @@
                     </li>
                 {% endif %}
                 <li>
-                    <a href="#">Admin</a>
+                    {% if is_granted("ROLE_ADMIN") %}
+                        <a href="{{ path('admin') }}">Admin</a>
+                    {% endif %}
                 </li>
             </ul>
         </div><!-- /.navbar-collapse -->
