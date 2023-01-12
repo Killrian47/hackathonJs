@@ -54,6 +54,9 @@ class Vehicle
     #[ORM\OneToMany(mappedBy: 'vehicle', targetEntity: Rental::class)]
     private Collection $rentals;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $vehicle_picture = null;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
@@ -250,6 +253,18 @@ class Vehicle
                 $rental->setVehicle(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getVehiclePicture(): ?string
+    {
+        return $this->vehicle_picture;
+    }
+
+    public function setVehiclePicture(?string $vehicle_picture): self
+    {
+        $this->vehicle_picture = $vehicle_picture;
 
         return $this;
     }
