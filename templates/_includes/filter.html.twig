@@ -1,18 +1,82 @@
-<div class="filter-form-container d-flex align-items-center justify-content-end">
-    <div class="btn-group">
-        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">Filtre
+<div class="d-flex">
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Brand
         </button>
-        <div class="dropdown-menu dropdown-menu-right">
-            <a href="" id="dateFilter">
-                <button class="dropdown-item" type="button">Les plus récentes</button>
-            </a>
-            <a href="" id="likesFilter">
-                <button class="dropdown-item" type="button">Les plus aimées</button>
-            </a>
-            <a href="" id="viewsFilter">
-                <button class="dropdown-item" type="button">Les plus vues</button>
-            </a>
-        </div>
+        <ul class="dropdown-menu">
+            {% for vehicle in vehicles %}
+                <li><a class="dropdown-item"
+                       href="{{ path('app_vehicles', {type: 'vehicleBrand', sort: vehicle.vehicleBrand}) }}">{{ vehicle.vehicleBrand }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Model
+        </button>
+        <ul class="dropdown-menu">
+            {% for vehicle in vehicles %}
+                <li><a class="dropdown-item"
+                       href="{{ path('app_vehicles', {type: 'vehicleModel', sort: vehicle.vehicleModel}) }}">{{ vehicle.vehicleModel }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Class
+        </button>
+        <ul class="dropdown-menu">
+            {% for vehicle in vehicles %}
+                <li><a class="dropdown-item"
+                       href="{{ path('app_vehicles', {type: 'vehicleType', sort: vehicle.vehicleType}) }}">{{ vehicle.vehicleType }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Gear
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item"
+                   href="{{ path('app_vehicles', {type: 'vehicleGearBoxType', sort: 'Automatic'}) }}">Automatic</a></li>
+            <li><a class="dropdown-item"
+                   href="{{ path('app_vehicles', {type: 'vehicleGearBoxType', sort: 'Manuel'}) }}">Manuel</a></li>
+
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Fuel
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ path('app_vehicles', {type: 'vehicleFuelType', sort: 'Hybrid'}) }}">Hybrid</a>
+            </li>
+            <li><a class="dropdown-item" href="{{ path('app_vehicles', {type: 'vehicleFuelType', sort: 'Electric'}) }}">Electric</a>
+            </li>
+            <li><a class="dropdown-item" href="{{ path('app_vehicles', {type: 'vehicleFuelType', sort: 'Action'}) }}">Action</a>
+            </li>
+            <li><a class="dropdown-item"
+                   href="{{ path('app_vehicles', {type: 'vehicleFuelType', sort: 'Gas'}) }}">Gas</a></li>
+            <li><a class="dropdown-item" href="{{ path('app_vehicles', {type: 'vehicleFuelType', sort: 'Diesel'}) }}">Diesel</a>
+            </li>
+        </ul>
+    </div>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Seats
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{{ path('app_vehicles', {type: 'vehicleSeatCount', sort: 2}) }}">2</a>
+            </li>
+            <li><a class="dropdown-item" href="{{ path('app_vehicles', {type: 'vehicleSeatCount', sort: 3}) }}">3</a>
+            </li>
+            <li><a class="dropdown-item" href="{{ path('app_vehicles', {type: 'vehicleSeatCount', sort: 5}) }}">5</a>
+            </li>
+            <li><a class="dropdown-item" href="{{ path('app_vehicles', {type: 'vehicleSeatCount', sort: 8}) }}">8</a>
+            </li>
+        </ul>
     </div>
 </div>
