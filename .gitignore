@@ -34,5 +34,6 @@ yarn.lock
 .idea
 DS_Store
 package-lock.jsong
+yarn.lock
 ###< IDE ###
 
