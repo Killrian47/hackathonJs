@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Company;
+use App\Entity\Vehicle;
 use App\Repository\CompanyRepository;
 use App\Repository\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -80,8 +81,8 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/checkout', name: 'app_checkout')]
-    public function checkout(): Response
+    #[Route('/checkout/{id}', name: 'app_checkout')]
+    public function checkout(Vehicle $vehicle): Response
     {
         return $this->render('checkout.html.twig', [
             'controller_name' => 'HomeController',
@@ -112,11 +113,11 @@ class HomeController extends AbstractController
         ]);
     }
 
-    #[Route('/cardetails', name: 'app_cardetails')]
-    public function cardetails(): Response
+    #[Route('/cardetails/{id}', name: 'app_cardetails')]
+    public function cardetails(Vehicle $vehicle): Response
     {
         return $this->render('car-details.html.twig', [
-            'controller_name' => 'HomeController',
+            'vehicle' => $vehicle,
         ]);
     }
 }
