@@ -1,0 +1,68 @@
+.explore-company {
+  .Relative(auto);
+}
+.rq-masonry-item {
+  padding: 0 @rq-margin-base @rq-margin-base * 2;
+  &.item-width {
+    width: 33.33333%;
+    height: 370px;
+    @media (max-width: @screen-md) {
+      width: 50%;
+    }
+    @media (max-width: @screen-sm) {
+      width: 100%;
+    }
+  }
+  &.item-width-double {
+    width: 66.66666%;
+    @media (max-width: @screen-md) {
+      width: 50%;
+    }
+    @media (max-width: @screen-sm) {
+      width: 100%;
+    }
+  }
+
+  .rq-company-single {
+    .Relative(100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: @rq-padding-base + 5 @rq-padding-large;
+    .rq-overlay {
+      .transition(.3s);
+      .absolute-overlay();
+      background: -webkit-linear-gradient(top, transparent 50% ,rgba(0,0,0,.1), rgba(0,0,0, .5), rgba(0,0,0, .8));
+      background: -o-linear-gradient(top, transparent 50% ,rgba(0,0,0,.1),rgba(0,0,0, .5), rgba(0,0,0, .8));
+      background: -moz-linear-gradient(top, transparent 50,rgba(0,0,0,.1), rgba(0,0,0, .5), rgba(0,0,0, .8));
+      background: linear-gradient(top, transparent 50%,rgba(0,0,0,.1), rgba(0,0,0, .5), rgba(0,0,0, .8));
+      :hover& {
+        background-color: rgba(0,0,0, .4);
+      }
+    }
+    span {
+      position: relative;
+      z-index: 20;
+    }
+    .company-name {
+      font-family: @rq-font-family-secondary;
+      .text-uppercase;
+      font-size: @rq-font-size-base + 2;
+      color: @rq-text-color-light;
+    }
+    .location {
+      font-family: @rq-font-family-primary;
+      font-size: @rq-font-size-base - 1;
+      color: @rq-text-color-base;
+      padding: 0 0 @rq-padding-small - 6;
+      i {
+        padding-right: @rq-padding-base - 2;
+      }
+    }
+    .company-experties {
+      font-family: @rq-font-family-primary;
+      font-size: @rq-font-size-base - 1;
+      color: @rq-text-color-white;
+    }
+  }
+}

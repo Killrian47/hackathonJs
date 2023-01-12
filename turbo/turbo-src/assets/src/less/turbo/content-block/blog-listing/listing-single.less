@@ -1,0 +1,125 @@
+.rq-listing-wrapper {
+  .Relative(auto);
+  padding: @rq-padding-base * 2 0;
+  margin-bottom: @rq-margin-base * 2;
+  .rq-listing-single {
+    .text-center;
+    position: relative;
+    margin-bottom: @rq-padding-small * 7;
+    .rq-listing-title {
+      .text-capitalize;
+      margin: 0;
+      padding-top: @rq-padding-large * 1.5;
+      padding-bottom: @rq-padding-base;
+      font-weight: @rq-font-weight-bolder;
+      a {
+        color: @rq-text-color-dark;
+        &:hover {
+          color: @rq-text-color-light-dark;
+        }
+      }
+    }
+    .rq-listing-meta {
+      position: relative;
+      margin-bottom: @rq-margin-base + 5;
+      .v-line {
+        padding: 0 @rq-padding-small;
+      }
+      a {
+        font-family: @rq-font-family-primary;
+        color: @rq-text-color-light-dark;
+        font-size: @rq-font-size-base - 1;
+        &:hover {
+          color: @rq-text-color-dark;
+        }
+      }
+    }
+    .post-content,
+    .post-content p {
+      font-size: @rq-font-size-base - 1;
+      display: block;
+      color: @rq-text-color-light-darker;
+      margin-bottom: @rq-margin-base;
+      font-weight: @rq-font-weight-bold;
+      .first-line {
+        display: block;
+      }
+    }
+  }
+}
+
+.rq-listing-standard-image-post {
+  position: relative;
+  img {
+    width: 100%;
+  }
+  iframe {
+    width: 100%;
+  }
+}
+
+.rq-listing-standard-video-post {
+  position: relative;
+  iframe {
+    width: 100%;
+  }
+  .feature-image {
+    position: relative;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+    i {
+      position: absolute;
+      left: 45%;
+      top: 45%;
+      z-index: 30;
+      height: @rq-margin-large * 2;
+      width: @rq-margin-large * 2;
+      background: #fff;
+      color: #000;
+      text-align: center;
+      line-height: @rq-margin-large * 2 + 2;
+      border-radius: 50%;
+      font-size: @rq-font-size-h3;
+      padding-left: @rq-padding-small - 5;;
+      cursor: pointer;
+    }
+  }
+}
+.rq-listing-gallery-post {
+  position: relative;
+  .rq-gallery-content {
+    position: relative;
+    width: 100%;
+    .flexslider {
+      margin: 0;
+    }
+    .custom-navigation {
+      position: absolute;
+      top: 46%;
+      z-index: 50;
+      width :100%;
+      a {
+        width: @rq-padding-small * 4;
+        height: @rq-padding-small * 4;
+        background: fade(@rq-bg-body, 80%);
+        display: block;
+        line-height: @rq-padding-small * 4 + 4;
+        font-size: @rq-font-size-base + 2;
+        color: @rq-text-color-dark;
+        i {
+          font-weight: bold;
+        }
+      }
+      .flex-prev {
+        position: absolute;
+        left: 20px;
+      }
+      .flex-next {
+        position: absolute;
+        right: 20px;
+      }
+    }
+  }
+}

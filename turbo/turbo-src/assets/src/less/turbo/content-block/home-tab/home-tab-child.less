@@ -1,0 +1,98 @@
+.child-tab-wrapper {
+  .Relative(auto);
+  display: inline-block;
+  .nav-tabs {
+    position: relative;
+    border-bottom: 0;
+    margin-top: @rq-margin-large * 2;
+    width: 40%;
+    height: 325px;
+    overflow: auto;
+    float: left;
+    .text-left;
+    @media (max-width: @screen-md) {
+      width: 100%;
+      float: none;
+      margin-bottom: @rq-margin-base * 2;
+    }
+    li {
+      position: relative;
+      float: none;
+      display: block;
+      border: 0;
+      padding: @rq-padding-small;
+      &:first-child {
+        margin-top: 0;
+      }
+      margin: 5px;
+      &:hover {
+        background: @rq-tab-active-bg;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: @rq-margin-large * 5;
+      }
+      &.active {
+        background: @rq-tab-active-bg;
+        a {
+          color: @rq-text-color-dark;
+          border: 0;
+          background: @rq-tab-active-bg;
+          &:focus {
+            border: 0;
+          }
+        }
+      }
+      a {
+        border: 0;
+        padding-left: @rq-padding-large * 6 - 10;
+        font-size: @rq-font-size-base + 2;
+        line-height: @rq-font-size-base + 2;
+        color: @rq-text-color-dark;
+        font-weight: @rq-font-weight-bold;
+        &:hover,
+        &:focus {
+          outline: 0;
+          background: transparent;
+          color: @rq-text-color-dark;
+        }
+        @media(max-width: @screen-xs)  {
+          font-size: @rq-font-size-base;
+        }
+        span {
+          display: block;
+        }
+
+        .title {
+          .text-capitalize;
+          font-size: @rq-font-size-base + 2;
+          color: @rq-text-color-dark;
+          font-weight: @rq-font-weight-bold;
+        }
+        .car-des {
+          font-size: @rq-font-size-base - 1;
+          color: @rq-text-color-base;
+          padding-top: @rq-padding-small - 5;
+        }
+        .rent-price {
+          padding-top: @rq-padding-small - 2;
+          color: @rq-text-color-base;
+          font-weight: @rq-font-weight-light;
+          b {
+            font-weight: normal;
+            font-size: @rq-font-size-base - 2;
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    position: relative;
+    margin-top: -(@rq-margin-base * 4);
+    width: 50%;
+    float: right;
+    .text-center;
+  }
+}

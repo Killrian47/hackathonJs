@@ -1,0 +1,41 @@
+.rq-elements-menu.nav {
+  position: relative;
+  .no-padding-margin();
+  list-style: none;
+  > li {
+    border-bottom: 1px solid @rq-date-color;
+    &:before {
+      content: "\45";
+      font-family: 'ElegantIcons';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      color: @rq-date-color;
+    }
+    &:hover {
+      &:before {
+        color: @rq-primary-color;
+      }
+    }
+    &.active {
+      a {
+        color: @rq-primary-color;
+      }
+      &:before {
+        color: @rq-primary-color;
+      }
+    }
+    > a {
+      padding-left: @rq-padding-large;
+      &:hover,
+      &:focus,
+      &:active{
+        background-color: transparent;
+        color: @rq-primary-color;
+      }
+      i {
+        float: right;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.time-content {
+  position: relative;
+  padding: @rq-padding-base + 5 0;
+  margin: @rq-margin-base * 3 - 5  0;
+  @media (max-width: 520px) {
+    margin: @rq-margin-base 0;
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  #countdowntimer {
+    font-size: @rq-margin-large * 3.5;
+    font-family: @rq-font-family-heading-secondary;
+    color: @rq-text-color-dark;
+    .text-center;
+    @media (max-width: 520px) {
+      font-size: @rq-font-size-h2;
+    }
+    span {
+      line-height: @rq-margin-large * 5;
+    }
+  }
+  .timer-division {
+    @media(max-width: 520px) {
+      display: none;
+    }
+    list-style: none;
+    .no-padding-margin();
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    font-size: 16px;
+    li {
+      display: inline-block;
+      .text-capitalize;
+      font-family: @rq-font-family-primary;
+      color: @rq-date-color;
+      font-weight: @rq-font-weight-bold;
+      padding-left: 20px;
+    }
+  }
+}

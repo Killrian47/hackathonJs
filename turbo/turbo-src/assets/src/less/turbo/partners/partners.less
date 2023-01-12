@@ -1,0 +1,38 @@
+.rq-partners-section {
+  .Relative(auto);
+  margin-bottom: @rq-margin-large * 4;
+  @media(max-width: @screen-sm) {
+    display: none;
+  }
+  .partners-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+  }
+  .partner-single {
+    position: relative;
+    margin: 10px;
+    a {
+      position: relative;
+      img {
+        .transition(.3s);
+        filter: grayscale(1);
+        -webkit-filter: grayscale(1);
+        -moz-filter: grayscale(1);
+        -o-filter: grayscale(1);
+        -ms-filter: grayscale(1);
+        opacity: 0.4;
+        &:hover {
+          filter: grayscale(0);
+          -webkit-filter: grayscale(0);
+          -moz-filter: grayscale(0);
+          -o-filter: grayscale(0);
+          -ms-filter: grayscale(0);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
