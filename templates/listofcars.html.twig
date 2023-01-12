@@ -99,7 +99,27 @@
                                     <div class="col-md-4 col-sm-6">
                                         <div class="listing-single">
                                             <div class="listing-img">
-                                                <img src="img/car-listing-grid/car1.jpg" alt="">
+                                                {% if loop.index == '1' %}
+                                                    <img src="{{ asset('picture/vehicle-1.jpeg') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '2' %}
+                                                    <img src="{{ asset('picture/vehicle-2.jpeg') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '3' %}
+                                                    <img src="{{ asset('picture/vehicle-3.jpeg') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '4' %}
+                                                    <img src="{{ asset('picture/vehicle-4.jpeg') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '5' %}
+                                                    <img src="{{ asset('picture/vehicle-5.jpeg') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '6' %}
+                                                    <img src="{{ asset('picture/vehicle-6.png') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '7' %}
+                                                    <img src="{{ asset('picture/vehicle-7.jpeg') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '8' %}
+                                                    <img src="{{ asset('picture/vehicle-8.jpeg') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '9' %}
+                                                    <img src="{{ asset('picture/vehicle-9.png') }}" alt="imgVehicle">
+                                                {% elseif loop.index == '10' %}
+                                                    <img src="{{ asset('picture/vehicle-10.jpeg') }}" alt="imgVehicle">
+                                                {% endif %}
                                             </div>
                                             <div class="listing-details">
                                                 <h3 class="car-name"><a
