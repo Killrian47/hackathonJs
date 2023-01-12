@@ -24017,3 +24017,7 @@ textarea.contact-form-input {
 .details-slider .owl-dots {
   display: none !important;
 }
+
+.marginTop{
+  margin: 25px;
+}
