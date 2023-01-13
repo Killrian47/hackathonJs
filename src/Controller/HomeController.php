@@ -115,7 +115,8 @@ class HomeController extends AbstractController
     public function checkout(Vehicle $vehicle,EntityManagerInterface $manager, CompanyRepository $companyRepository): Response
     {
         $errors = [];
-
+        /** @var \App\Entity\User */
+        $user = $this->getUser();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $startDate = new \DateTime($_POST['startDate']);
             $endDate = new \DateTime($_POST['endDate']);
@@ -133,7 +134,19 @@ class HomeController extends AbstractController
                 $rent->setEndRental($endDate);
                 $rent->setStartLocation($vehicle->getCompany()->getAgencyLocation());
                 $rent->setEndLocation($_POST['endLocation']);
+
+                $endRentingDateTS = $endDate->getTimestamp();
+                $startRentingDateTS = $startDate->getTimestamp();
+                $difference = $endRentingDateTS - $startRentingDateTS;
+                $hours = floor($difference / (60 * 60));
+
+                if ($vehicle->getVehicleFuelType() === 'hybrid') {
+                    $user->setPoints($user->getPoints() + 5 * $hours);
+                } if ($vehicle->getVehicleFuelType() === 'electric') {
+                    $user->setPoints($user->getPoints() + 10 * $hours);
+                }
                 $manager->persist($rent);
+                $manager->persist($user);
             }
             $manager->flush();
             return $this->redirectToRoute('app_reservation');
