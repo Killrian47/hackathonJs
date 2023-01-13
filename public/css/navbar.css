@@ -1,0 +1,9 @@
+.navbar-display-row{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+}
+
+.homeBanner{
+    height: 10%;
+}

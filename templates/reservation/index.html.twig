@@ -3,29 +3,40 @@
 {% block title %}Hello ReservationController!{% endblock %}
 
 {% block body %}
+    <div style="text-align: center; font-weight: bold; margin-bottom: 12em; ">
+        <h2>My reservations</h2>
+{#        {% for rental in rentals %}#}
+{#            {% if app.user.id == rental.renter.id %}#}
+
+            <p>My points : {{ app.user.points}}</p>
+{#            {% endif %}#}
+{#        {% endfor %}#}
+    </div>
+
+    <div style="display: flex">
+    <div style="margin: auto; padding-bottom: 10em;">
     <table style ="border: 1px solid #cccccc;">
         <tr style ="border: 1px solid #cccccc;">
-            <th style ="border: 1px solid #cccccc;">Reservation Number</th>
-            <th style ="border: 1px solid #cccccc;">Dates of renting</th>
-            <th style ="border: 1px solid #cccccc;">Vehicle used</th>
-            <th style ="border: 1px solid #cccccc;">Number of points won</th>
+            <th style ="border: 1px solid #cccccc; padding-right: 5em;">Reservation Number</th>
+            <th style ="border: 1px solid #cccccc; padding-right: 10em;">Dates of renting</th>
+            <th style ="border: 1px solid #cccccc; padding-right: 10em;">Vehicle used</th>
         </tr>
 
         {% for rental in rentals %}
             {% if app.user.id == rental.renter.id %}
-        <tr style ="border: 1px solid #cccccc;" >
-            <td style ="border: 1px solid #cccccc;" >2665218</td>
+        <tr style ="border: 1px solid #cccccc; padding-bottom: 10em;" >
+            <td style ="border: 1px solid #cccccc;" >{{ random(20000, 24000) }}</td>
             <td style ="border: 1px solid #cccccc;" >From {{ rental.startRental|date('Y-m-d') }} <br>to {{ rental.endRental|date('Y-m-d')}} </td>
             <td style ="border: 1px solid #cccccc;" >Brand : {{ rental.vehicle.vehicleBrand }} <br>
                                                      Model : {{ rental.vehicle.vehicleModel }} <br>
                                                      Fuel : {{ rental.vehicle.vehicleFuelType }} <br></td>
-            <td style ="border: 1px solid #cccccc;" > {{ rental.renter.points}} </td>
         </tr>
         {% endif %}
         {% endfor %}
-        <a href=" {{ path('app_points_added') }}">
-        <button>Add points</button>
-        </a>
+
 
     </table>
+    </div>
+    </div>
+
 {% endblock %}
