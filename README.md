@@ -24,7 +24,7 @@ It's a --webapp symfony 6.2 project.
 2. Comment the "postgresql" line (32) and uncomment the "sql" line (31)
 3. Enter your username, your password and the name of your database on the dedicated places to configure the access of your sql database.
 4. Run `symfony console doctrine:database:create` to create your local database.
-5. Run `symfony console doctrine:migrations:migrate` to run the migrations.
+5. Run `symfony console doctrine:schema:update --force` to update the database.
 6. Run `php bin/console doctrine:fixtures:load` to load the fixtures.
 
 ### Windows Users
