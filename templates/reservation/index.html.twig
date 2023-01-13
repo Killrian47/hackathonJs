@@ -3,8 +3,14 @@
 {% block title %}Hello ReservationController!{% endblock %}
 
 {% block body %}
-    <div style="text-align: center; font-weight: bold;">
+    <div style="text-align: center; font-weight: bold; margin-bottom: 12em; ">
         <h2>My reservations</h2>
+        {% for rental in rentals %}
+            {% if app.user.id == rental.renter.id %}
+
+            <p>My points : {{ rental.renter.points}}</p>
+            {% endif %}
+        {% endfor %}
     </div>
 
     <div style="display: flex">
@@ -14,26 +20,20 @@
             <th style ="border: 1px solid #cccccc; padding-right: 5em;">Reservation Number</th>
             <th style ="border: 1px solid #cccccc; padding-right: 10em;">Dates of renting</th>
             <th style ="border: 1px solid #cccccc; padding-right: 10em;">Vehicle used</th>
-            <th style ="border: 1px solid #cccccc; padding-right: 5em;">Number of points</th>
         </tr>
 
         {% for rental in rentals %}
             {% if app.user.id == rental.renter.id %}
         <tr style ="border: 1px solid #cccccc; padding-bottom: 10em;" >
-            <td style ="border: 1px solid #cccccc;" >2665218</td>
+            <td style ="border: 1px solid #cccccc;" >{{ random(20000, 24000) }}</td>
             <td style ="border: 1px solid #cccccc;" >From {{ rental.startRental|date('Y-m-d') }} <br>to {{ rental.endRental|date('Y-m-d')}} </td>
             <td style ="border: 1px solid #cccccc;" >Brand : {{ rental.vehicle.vehicleBrand }} <br>
                                                      Model : {{ rental.vehicle.vehicleModel }} <br>
                                                      Fuel : {{ rental.vehicle.vehicleFuelType }} <br></td>
-            <td style ="border: 1px solid #cccccc;" > {{ rental.renter.points}} </td>
         </tr>
         {% endif %}
         {% endfor %}
-        <div style="margin: auto;">
-        <a href=" {{ path('app_points_added') }}">
-        <button style="margin-left: 28em; margin-top: 4em; margin-bottom: 5em;" >Add points</button>
-        </a>
-        </div>
+
 
     </table>
     </div>
