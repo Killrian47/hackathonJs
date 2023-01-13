@@ -130,15 +130,16 @@
                             <div class="rq-car-booking-section">
                                 <div class="booking-details marginTop">
                                     <div class="col-md-12">
-                                        <h3 class="total-price marginTop mb-2">Total Booking Cost : <span>{{ vehicle.price }} $/day</span></h3>
+                                        <h3 class="total-price marginTop mb-2">Total Booking Cost : <span>{{ vehicle.price }}$/day</span></h3>
                                     </div>
                                 </div>
                             </div>
                             <div class="rq-search-single search-btn">
                                 <div class="rq-search-content">
                                     <div class="rq-btn rq-btn-primary fluid-btn">
-                                        <button class="rq-btn rq-btn-primary btn-large"><a href="{{ path('app_checkout', {id: vehicle.id}) }}">Book Now </a><i
-                                                    class="ion-android-car"></i></button>
+                                        <a href="{{ path('app_checkout', {id: vehicle.id}) }}"><button class="rq-btn rq-btn-primary btn-large">Book Now<i
+                                                        class="ion-android-car"></i></button></a>
+
                                     </div>
                                 </div>
                             </div>
