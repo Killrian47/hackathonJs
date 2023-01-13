@@ -34,27 +34,34 @@
                         <h3 class="font-size-4">Agency location: {{ vehicle.company.agencyLocation }}</h3>
                         <h3 class="font-size-4">price: <span class="text-danger">{{ vehicle.price }}</span> / day</h3>
                         <div>
-{#                            {% for error in errors %}#}
-{#                                <li>{{ error }}</li>#}
-{#                            {% endfor %}#}
+                            {#                            {% for error in errors %} #}
+                            {#                                <li>{{ error }}</li> #}
+                            {#                            {% endfor %} #}
                         </div>
                         <form action="#" method="post">
                             <h4>Please choose the pickup date</h4>
-                            <input type="datetime-local" name="startDate" class="contact-form-input" placeholder="start location date">
+                            <input type="datetime-local" name="startDate" class="contact-form-input"
+                                   placeholder="start location date">
                             <h4>... the dropoff date</h4>
-                            <input type="datetime-local" name="endDate" class="contact-form-input" placeholder="end location date">
+                            <input type="datetime-local" name="endDate" class="contact-form-input"
+                                   placeholder="end location date">
                             <h4>... and the dropoff Location</h4>
                             <div class="m-2">
                                 <select name="endLocation" id="endLocation">
                                     <option class="" value="">Select a drop off location</option>
                                     {% for company in companies %}
-                                        <option value="{{ company.agencyLocation }}" name="endLocation"><strong>{{ company.name }}</strong> {{ company.agencyLocation }}</option>
+                                        <option value="{{ company.agencyLocation }}" name="endLocation">
+                                            <strong>{{ company.name }}</strong> {{ company.agencyLocation }}</option>
                                     {% endfor %}
                                 </select>
                             </div>
-                            <div class="submit-btn">
-                                <button type="submit" class="rq-btn rq-btn-primary">Make the reservation</button>
-                            </div>
+                            {% if is_granted('ROLE_USER') %}
+                                <div class="submit-btn">
+                                    <button type="submit" class="rq-btn rq-btn-primary">Make the reservation</button>
+                                </div>
+                            {% else %}
+                                <button class="rq-btn rq-btn-primary"><a href="{{ path('app_loginpage') }}">Login</a></button>
+                            {% endif %}
                         </form>
                     </div> <!-- end message form -->
 
