@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Company;
+use App\Entity\Rental;
 use App\Entity\Vehicle;
 use App\Repository\CompanyRepository;
 use App\Repository\VehicleRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -82,10 +84,37 @@ class HomeController extends AbstractController
     }
 
     #[Route('/checkout/{id}', name: 'app_checkout')]
-    public function checkout(Vehicle $vehicle): Response
+    public function checkout(Vehicle $vehicle,EntityManagerInterface $manager, CompanyRepository $companyRepository): Response
     {
+        $errors = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $startDate = new \DateTime($_POST['startDate']);
+            $endDate = new \DateTime($_POST['endDate']);
+            if (empty($_POST['startDate'])) {
+                $errors[] = 'please enter a pick up date';
+            } if (empty($_POST['endDate'])) {
+                $errors[] = 'please enter a drop off date';
+            }
+
+            if (empty($errors)) {
+                $rent = new Rental();
+                $rent->setRenter($this->getUser());
+                $rent->setVehicle($vehicle);
+                $rent->setStartRental($startDate);
+                $rent->setEndRental($endDate);
+                $rent->setStartLocation($vehicle->getCompany()->getAgencyLocation());
+                $rent->setEndLocation($_POST['endLocation']);
+                $manager->persist($rent);
+            }
+            $manager->flush();
+            return $this->redirectToRoute('app_reservation');
+        }
+
         return $this->render('checkout.html.twig', [
-            'controller_name' => 'HomeController',
+            'vehicle' => $vehicle,
+            'companies' => $companyRepository->findAll(),
+            'errors' => $errors
         ]);
     }
 
