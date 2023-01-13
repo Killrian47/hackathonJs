@@ -5,12 +5,12 @@
 {% block body %}
     <div style="text-align: center; font-weight: bold; margin-bottom: 12em; ">
         <h2>My reservations</h2>
-        {% for rental in rentals %}
-            {% if app.user.id == rental.renter.id %}
+{#        {% for rental in rentals %}#}
+{#            {% if app.user.id == rental.renter.id %}#}
 
-            <p>My points : {{ rental.renter.points}}</p>
-            {% endif %}
-        {% endfor %}
+            <p>My points : {{ app.user.points}}</p>
+{#            {% endif %}#}
+{#        {% endfor %}#}
     </div>
 
     <div style="display: flex">
