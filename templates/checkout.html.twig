@@ -32,12 +32,7 @@
                         <h5>door count: {{ vehicle.vehicleDoorCount }}</h5>
                         <h5>Agency: {{ vehicle.company.name }}</h5>
                         <h3 class="font-size-4">Agency location: {{ vehicle.company.agencyLocation }}</h3>
-                        <h3 class="font-size-4">price: <span class="text-danger">{{ vehicle.price }}</span> / day</h3>
-                        <div>
-                            {#                            {% for error in errors %} #}
-                            {#                                <li>{{ error }}</li> #}
-                            {#                            {% endfor %} #}
-                        </div>
+                        <h3 class="font-size-4">price: <span class="text-danger">{{ vehicle.price }}$</span>/day</h3>
                         <form action="#" method="post">
                             <h4>Please choose the pickup date</h4>
                             <input type="datetime-local" name="startDate" class="contact-form-input"

@@ -37,7 +37,8 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         {% for company in companies %}
-                                            <a href="{{ path('app_listofcars', {type: 'company', sort: company.id}) }}">{{ company.name }}</a><br>
+                                            <a href="{{ path('app_listofcars', {type: 'company', sort: company.id}) }}">{{ company.name }}</a>
+                                            <br>
                                         {% endfor %}
                                     </ul>
                                 </div>
@@ -50,7 +51,8 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         {% for vehicle in vehicles %}
-                                            <a href="{{ path('app_listofcars', {type: 'vehicleBrand', sort: vehicle.vehicleBrand}) }}">{{ vehicle.vehicleBrand }}</a><br>
+                                            <a href="{{ path('app_listofcars', {type: 'vehicleBrand', sort: vehicle.vehicleBrand}) }}">{{ vehicle.vehicleBrand }}</a>
+                                            <br>
                                         {% endfor %}
                                     </ul>
                                 </div>
@@ -139,11 +141,16 @@
                                                     <li>Transmission: <span>{{ vehicle.vehicleGearBoxType }}</span></li>
                                                     <li>door count: <span>{{ vehicle.vehicleDoorCount }}</span></li>
                                                     <li>Agency: <span>{{ vehicle.company.name }}</span></li>
+                                                    {% if vehicle.vehicleFuelType == 'hybrid' %}
+                                                        <li>Points reward : <span class="text-success">5 points</span> /Hour</li>
+                                                    {% elseif vehicle.vehicleFuelType == 'electric' %}
+                                                        <li>Points reward :  <span class="text-success">10 points</span> /Hour</li>
+                                                    {% endif %}
                                                 </ul>
                                                 <div class="listing-footer">
                                                     <span><a href="{{ path('app_cardetails', {id : vehicle.id}) }}">Details</a></span>
                                                     <span>
-                            Starting at <span class="price">{{ vehicle.price }}</span> / day
+                            Starting at <span class="price">{{ vehicle.price }}$</span>/day
                           </span>
                                                 </div>
 
